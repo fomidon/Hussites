@@ -5,9 +5,9 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     // Массивы с классами юнитов разных родов войск
-    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Легкая пехота", "Тяжелая пехота" };
-    private readonly string[] _cavarlyUnitTypes = { "Легкая конница", "Тяжелая конница" };
-    private readonly string[] _rangedUnitTypes = { "Легкие копейщики", "Тяжелые копейщики", "Стрелки с арбалетами", "Артиллерия" };
+    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота"};
+    private readonly string[] _cavarlyUnitTypes = { "Кавалерия" };
+    private readonly string[] _rangedUnitTypes = { "Дальний бой" };
     
     // Свойства для хранения валюты
     public int Piety { get; private set; }
