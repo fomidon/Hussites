@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 public class Player : MonoBehaviour
 {
+    // Позиция игрока на карте и последняя дружественная позиция
+    public MapRegion position;
+    public MapRegion lastFriendlyPosition; //{ get; private set; }
+    public MapRegion startPosition;
+
     // Массивы с классами юнитов разных родов войск
     private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота"};
     private readonly string[] _cavarlyUnitTypes = { "Кавалерия" };
@@ -27,6 +33,8 @@ public class Player : MonoBehaviour
     {
         Piety = startingPiety;
         Gold = startingGold;
+
+        position = startPosition;
         
         InitializeUnitDictionary(_infantryUnits, _infarnyUnitTypes);
         InitializeUnitDictionary(_cavalryUnits, _cavarlyUnitTypes);
@@ -90,6 +98,27 @@ public class Player : MonoBehaviour
             var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
             if (unitTextMesh != null) 
                 unitTextMesh.text = count.ToString();
+        }
+    }
+
+    public bool TryMovePosition(MapRegion region)
+    {
+        if ((region.position - position.position).magnitude > GameManager.TransitionMaxLength)
+        {
+            return false;
+        }
+        if (region.regionType.ToLower() == "enemy")
+        {
+            lastFriendlyPosition = position;
+        }
+        position = region;
+        return true;
+    }
+    private void Update()
+    {
+        if (position != null)
+        {
+            transform.position = position.position;
         }
     }
 }
