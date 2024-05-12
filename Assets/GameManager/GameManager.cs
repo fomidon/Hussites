@@ -1,15 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
-    public Player playerPrefab;
-    public int startingPiety = 100;
-    public int startingGold = 50;
+    public static Player player { get; private set; }
+    public const float TransitionMaxLength = 2;
 
-    void Start()
+    public static void Initialize(Player playerData)
     {
-        // Создание игрока и инициализация его значений
-        var playerInstance = Instantiate(playerPrefab);
-        playerInstance.Initialize(startingPiety, startingGold);
+        player = playerData;
+    }
+
+    public static void MovePlayer(MapRegion province)
+    {
+        if (player.TryMovePosition(province))
+        {
+            Debug.Log("success");
+        }
     }
 }

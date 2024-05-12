@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 
 public class MapRegion : MonoBehaviour
 {
@@ -7,11 +8,16 @@ public class MapRegion : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Ссылка на SpriteRenderer региона
     private static MapRegion previousSelectedRegion; // Ссылка на предыдущий выделенный регион
     public string regionName;
+    public string regionType;
+    private float mouseBlockTimer = 0;
+
+    public Vector2 position { get; private set; }
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         _normalTexture = spriteRenderer.sprite;
+        position = transform.position;
     }
 
     void OnMouseDown()
@@ -30,5 +36,23 @@ public class MapRegion : MonoBehaviour
     void DeselectRegion()
     {
         spriteRenderer.sprite = _normalTexture;
+    }
+
+    void Update()
+    {
+        RightMouseCalc();
+    }
+
+    private void RightMouseCalc()
+    {
+        if (Input.GetMouseButtonUp(1))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            {
+                GameManager.MovePlayer(this);
+            }
+        }
     }
 }
