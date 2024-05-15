@@ -12,9 +12,10 @@ public static class GameManager
 
     public static void MovePlayer(MapRegion province)
     {
-        if (player.TryMovePosition(province))
+        if (!player.CanMovePosition(province))
         {
-            Debug.Log("success");
+            return;
         }
+        player.TryMovePosition(province);
     }
 }
