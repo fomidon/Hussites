@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     // Позиция игрока на карте и последняя дружественная позиция
     public MapRegion position;
-    public MapRegion lastFriendlyPosition; //{ get; private set; }
     public MapRegion startPosition;
 
     // Массивы с классами юнитов разных родов войск
@@ -101,19 +100,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool TryMovePosition(MapRegion region)
-    {
-        if ((region.position - position.position).magnitude > GameManager.TransitionMaxLength)
-        {
-            return false;
-        }
-        if (region.regionType.ToLower() == "enemy")
-        {
-            lastFriendlyPosition = position;
-        }
-        position = region;
-        return true;
-    }
     private void Update()
     {
         if (position != null)

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class MapRegion : MonoBehaviour
@@ -9,7 +10,8 @@ public class MapRegion : MonoBehaviour
     private static MapRegion previousSelectedRegion; // Ссылка на предыдущий выделенный регион
     public string regionName;
     public string regionType;
-    private float mouseBlockTimer = 0;
+    private float mouseBlockTimer = 0.5f;
+    private GameManager gameManager; // Ссылка на экземпляр GameManager
 
     public Vector2 position { get; private set; }
 
@@ -18,6 +20,13 @@ public class MapRegion : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         _normalTexture = spriteRenderer.sprite;
         position = transform.position;
+
+        // Находим экземпляр GameManager в сцене
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("Не удалось найти экземпляр GameManager в сцене.");
+        }
     }
 
     void OnMouseDown()
@@ -33,7 +42,7 @@ public class MapRegion : MonoBehaviour
         previousSelectedRegion = this;
     }
 
-    void DeselectRegion()
+    private void DeselectRegion()
     {
         spriteRenderer.sprite = _normalTexture;
     }
@@ -45,14 +54,35 @@ public class MapRegion : MonoBehaviour
 
     private void RightMouseCalc()
     {
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && mouseBlockTimer <= 0)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                GameManager.MovePlayer(this);
+                StartCoroutine(MovePlayerAfterDelay());
             }
+        }
+        else if (mouseBlockTimer > 0)
+        {
+            mouseBlockTimer -= Time.deltaTime;
+        }
+    }
+
+    // ReSharper disable Unity.PerformanceAnalysis
+    private IEnumerator MovePlayerAfterDelay()
+    {
+        // Блокируем обработку правой кнопки мыши на некоторое время, чтобы избежать мгновенного перемещения
+        yield return new WaitForSeconds(0.5f);
+
+        // После задержки перемещаем игрока
+        if (gameManager != null)
+        {
+            gameManager.MovePlayerToRegion(this);
+        }
+        else
+        {
+            Debug.LogWarning("Экземпляр GameManager не установлен.");
         }
     }
 }
