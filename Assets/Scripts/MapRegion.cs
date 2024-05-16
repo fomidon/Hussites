@@ -73,7 +73,7 @@ public class MapRegion : MonoBehaviour
     private IEnumerator MovePlayerAfterDelay()
     {
         // Блокируем обработку правой кнопки мыши на некоторое время, чтобы избежать мгновенного перемещения
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.005f);
 
         // После задержки перемещаем игрока
         if (gameManager != null)

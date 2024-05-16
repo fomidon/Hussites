@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
         // Создание экземпляра контроллера перемещения
         _playerMovement = playerObject.GetComponent<PlayerMovement>();
+        _playerMovement.SetFirstCurrentPosition();
 
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;

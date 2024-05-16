@@ -2,6 +2,7 @@
 using TMPro;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -19,9 +20,14 @@ public class Player : MonoBehaviour
     public int Gold { get; private set; }
 
     // Словари для хранения количества войск
-    private readonly Dictionary<string, int> _infantryUnits = new();
-    private readonly Dictionary<string, int> _cavalryUnits = new();
-    private readonly Dictionary<string, int> _rangedUnits = new();
+    public const int MaxArmySize = 20;
+    private int _recruitsCount = 0;
+    private readonly List<MeleeSoldier> _infantryUnits = new List<MeleeSoldier>();
+    private readonly List<MeleeSoldier> _cavalryUnits = new List<MeleeSoldier>();
+    private readonly List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
+
+    public int armySize { get => _recruitsCount + _infantryUnits.Count + 
+            _cavalryUnits.Count + _rangedUnits.Count; }
 
     // Ссылки на текст для отображения в интерфейсе
     public TextMeshProUGUI pietyText;
@@ -34,14 +40,10 @@ public class Player : MonoBehaviour
         Gold = startingGold;
 
         position = startPosition;
-        
-        InitializeUnitDictionary(_infantryUnits, _infarnyUnitTypes);
-        InitializeUnitDictionary(_cavalryUnits, _cavarlyUnitTypes);
-        InitializeUnitDictionary(_rangedUnits, _rangedUnitTypes);
 
         UpdateUI();
     }
-    
+
     private void InitializeUnitDictionary(Dictionary<string, int> unitDict, string[] unitTypes)
     {
         foreach (var unitType in unitTypes) unitDict.Add(unitType, 0);
@@ -62,21 +64,45 @@ public class Player : MonoBehaviour
     }
 
     // Метод для изменения количества войск
-    public void ModifyUnitCount(string unitType, int amount)
+    // Методы для найма и улучшения войск
+    public bool CanHireRecruits(int amount)
     {
-        if (_infantryUnits.ContainsKey(unitType))
-        {
-            _infantryUnits[unitType] += amount;
-        }
-        else if (_cavalryUnits.ContainsKey(unitType))
-        {
-            _cavalryUnits[unitType] += amount;
-        }
-        else if (_rangedUnits.ContainsKey(unitType))
-        {
-            _rangedUnits[unitType] += amount;
-        }
+        return armySize + amount <= MaxArmySize;
+    }
 
+    public void HireRecruits(int amount)
+    {
+        if (!CanHireRecruits(amount))
+        {
+            throw new Exception("Вы не можете нанимать новобранцев сверх лимита");
+        }
+        _recruitsCount += amount;
+    }
+    public bool CanTrainRecruits()
+    {
+        return _recruitsCount > 0;
+    }
+
+    public void TrainRecruit(string unitType)
+    {
+        if (!CanTrainRecruits())
+        {
+            throw new Exception("Нет новобранцев для обучения");
+        }
+        _recruitsCount--;
+
+        switch (unitType)
+        {
+            case "Пехота":
+                _infantryUnits.Add(UnitsInit.InitInfantrySoldiers());
+                break;
+            case "Кавалерия":
+                _cavalryUnits.Add(UnitsInit.InitCavalrySoldiers());
+                break;
+            case "Дальний бой":
+                _rangedUnits.Add(UnitsInit.InitCrossbowSoldiers());
+                break;
+        }
         UpdateUI();
     }
 
@@ -85,19 +111,24 @@ public class Player : MonoBehaviour
     {
         pietyText.text = Piety.ToString();
         goldText.text = Gold.ToString();
-        UpdateUnitText(_infantryUnits);
-        UpdateUnitText(_cavalryUnits);
-        UpdateUnitText(_rangedUnits);
+        UpdateRecruitsText();
+        UpdateUnitText(_infantryUnits, "Пехота");
+        UpdateUnitText(_cavalryUnits, "Кавалерия");
+        UpdateUnitText(_rangedUnits, "Дальний бой");
+    }
+
+    private void UpdateRecruitsText()
+    {
+        var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
+        if (unitTextMesh != null) 
+            unitTextMesh.text = _recruitsCount.ToString();
     }
     
-    private void UpdateUnitText(Dictionary<string, int> unitDict)
+    private void UpdateUnitText<T>(List<T> Units, string unitType)
     {
-        foreach (var (unitType, count) in unitDict)
-        {
-            var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
-            if (unitTextMesh != null) 
-                unitTextMesh.text = count.ToString();
-        }
+        var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
+        if (unitTextMesh != null) 
+            unitTextMesh.text = Units.Count.ToString();
     }
 
     private void Update()
@@ -106,5 +137,6 @@ public class Player : MonoBehaviour
         {
             transform.position = position.position;
         }
+        UpdateUI();
     }
 }

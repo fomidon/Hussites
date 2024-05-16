@@ -7,6 +7,12 @@ public class PlayerMovement : MonoBehaviour
     private MapRegion _lastFriendlyPosition;
     private const float TransitionMaxLength = 2;
 
+    //Метод для установки начального местоположения
+    public void SetFirstCurrentPosition()
+    {
+        _currentPosition = initialRegion;
+    }
+
     // Метод для перемещения игрока в указанный регион
     public MapRegion MoveToRegion(Player player, MapRegion targetRegion)
     {
@@ -27,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public bool TryMovePosition(MapRegion region)
     {
         // Проверяем, допустимо ли перемещение на такое расстояние
-        if ((region.position - initialRegion.position).magnitude > TransitionMaxLength)
+        if ((region.position - _currentPosition.position).magnitude > TransitionMaxLength)
         {
             return false;
         }
