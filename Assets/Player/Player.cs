@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using System;
+using System.Linq;
 
 public class Player : MonoBehaviour
 {
@@ -11,20 +12,25 @@ public class Player : MonoBehaviour
     public MapRegion startPosition;
 
     // Массивы с классами юнитов разных родов войск
-    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота"};
+    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота" };
     private readonly string[] _cavarlyUnitTypes = { "Кавалерия" };
     private readonly string[] _rangedUnitTypes = { "Дальний бой" };
-    
+
     // Свойства для хранения валюты
     public int Piety { get; private set; }
     public int Gold { get; private set; }
 
-    // Словари для хранения количества войск
+    // Списки для хранения количества войск
     public const int MaxArmySize = 20;
-    private int _recruitsCount = 0;
+    public int _recruitsCount { get; private set; } = 0;
     private readonly List<MeleeSoldier> _infantryUnits = new List<MeleeSoldier>();
+    public List<MeleeSoldier> infantryOutside{ get => _infantryUnits.ToList(); }
+
     private readonly List<MeleeSoldier> _cavalryUnits = new List<MeleeSoldier>();
+    public List<MeleeSoldier> cavalryOutside { get => _cavalryUnits.ToList(); }
+
     private readonly List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
+    public List<DistantSoldier> rangedUnitsOutside { get => _rangedUnits.ToList(); }
 
     public int armySize { get => _recruitsCount + _infantryUnits.Count + 
             _cavalryUnits.Count + _rangedUnits.Count; }

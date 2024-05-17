@@ -40,7 +40,15 @@ public class GameManager : MonoBehaviour
     // Метод для перемещения игрока в указанный регион
     public void MovePlayerToRegion(MapRegion targetRegion)
     {
-        currentRegion = _playerMovement.MoveToRegion(_player,targetRegion);
+        currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
         //UpdateUI();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.F5))
+        {
+            ProgressSaveManager.SaveProgress(SaveType.ManualSave, _player);
+        }
     }
 }
