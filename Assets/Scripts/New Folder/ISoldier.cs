@@ -17,4 +17,6 @@ public interface ISoldier
     public void CalculateLosses();
 
     public int NumberOfPeople { get; }
+
+    public int MaxPeopleNumber { get; }
 }

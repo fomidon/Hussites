@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
         Gold = startingGold;
 
         position = startPosition;
-
-        UpdateUI();
     }
 
     // Метод для установки начальных значений из сохранения
@@ -76,14 +74,12 @@ public class Player : MonoBehaviour
     public void ModifyPiety(int amount)
     {
         Piety += amount;
-        UpdateUI();
     }
 
     // Метод для изменения золота
     public void ModifyGold(int amount)
     {
         Gold += amount;
-        UpdateUI();
     }
 
     // Метод для изменения количества войск
@@ -110,7 +106,7 @@ public class Player : MonoBehaviour
     {
         if (!CanTrainRecruits())
         {
-            throw new Exception("Нет новобранцев для обучения");
+            Debug.LogWarning("Нет новобранцев для обучения");
         }
         _recruitsCount--;
 
@@ -126,7 +122,6 @@ public class Player : MonoBehaviour
                 _rangedUnits.Add(UnitsInit.InitCrossbowSoldiers());
                 break;
         }
-        UpdateUI();
     }
 
     // Метод для обновления отображения в интерфейсе
@@ -144,14 +139,18 @@ public class Player : MonoBehaviour
     {
         var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
         if (unitTextMesh != null) 
-            unitTextMesh.text = _recruitsCount.ToString();
+            unitTextMesh.text = (_recruitsCount * 250).ToString();
     }
     
-    private void UpdateUnitText<T>(List<T> Units, string unitType)
+    private void UpdateUnitText<T>(List<T> Units, string unitType) where T: ISoldier
     {
         var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
-        if (unitTextMesh != null) 
-            unitTextMesh.text = Units.Count.ToString();
+        if (unitTextMesh != null)
+        {
+            var soldiersNumber = Units.Select(x => x.NumberOfPeople).Sum();
+            var soldiersMaxNumber = Units.Select(x => x.MaxPeopleNumber).Sum();
+            unitTextMesh.text = soldiersNumber.ToString() + "/" + soldiersMaxNumber.ToString();
+        }
     }
 
     private void Update()
@@ -168,7 +167,7 @@ public class Player : MonoBehaviour
     {
         if (UnityEngine.Input.GetKeyUp(KeyCode.J))
         {
-            _recruitsCount = 6;
+            HireRecruits(4);
             TrainRecruit("Пехота");
             TrainRecruit("Пехота");
             TrainRecruit("Кавалерия");
