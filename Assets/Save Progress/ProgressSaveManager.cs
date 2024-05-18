@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.IO;
 using UnityEngine;
+using System;
 
 public enum SaveType
 {
     AutoSave,
-    ManualSave
+    ManualSave,
+    BasicSave
 }
 
 public class ProgressSaveManager

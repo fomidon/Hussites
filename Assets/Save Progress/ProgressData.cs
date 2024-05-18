@@ -4,14 +4,19 @@ using System.Linq;
 
 public class ProgressData
 {
-    public int RecruitsData { get; private set; }
-    public List<double> InfantryUnitsData { get; private set; }
-    public List<double> CavalryUnitsData { get; private set; }
-    public List<double> DistantUnitsData { get; private set; }
+    public int RecruitsData { get; set; }
+    public List<double> InfantryUnitsData { get; set; }
+    public List<double> CavalryUnitsData { get; set; }
+    public List<double> DistantUnitsData { get; set; }
 
-    public int Gold { get; private set; }
-    public int Piety { get; private set; }
-    public string Position { get; private set; }
+    public int Gold { get; set; }
+    public int Piety { get; set; }
+    public string Position { get; set; }
+
+    public ProgressData()
+    {
+
+    }
 
     public ProgressData(Player player)
     {

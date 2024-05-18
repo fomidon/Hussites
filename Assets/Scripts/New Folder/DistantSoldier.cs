@@ -50,4 +50,13 @@ public class DistantSoldier : IDistantSoldier
     {
         CurrentAmmunition--;
     }
+
+    public void SetHealthManually(double health)
+    {
+        if (health > MaxHealth)
+        {
+            throw new Exception("Слишком много здоровья у юнита");
+        }
+        GlobalHealth = health;
+    }
 }
