@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class MapRegion : MonoBehaviour
@@ -36,9 +35,9 @@ public class MapRegion : MonoBehaviour
         {
             previousSelectedRegion.DeselectRegion();
         }
+
         // Выделяем текущий регион
         spriteRenderer.sprite = highlightTexture;
-        // Обновляем ссылку на предыдущий выделенный регион
         previousSelectedRegion = this;
     }
 

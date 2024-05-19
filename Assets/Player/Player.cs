@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     public MapRegion startPosition;
 
     // Массивы с классами юнитов разных родов войск
-    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота"};
+    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота" };
     private readonly string[] _cavarlyUnitTypes = { "Кавалерия" };
     private readonly string[] _rangedUnitTypes = { "Дальний бой" };
-    
+
     // Свойства для хранения валюты
     public int Piety { get; private set; }
     public int Gold { get; private set; }
@@ -22,12 +22,15 @@ public class Player : MonoBehaviour
     // Словари для хранения количества войск
     public const int MaxArmySize = 20;
     private int _recruitsCount = 0;
-    private readonly List<MeleeSoldier> _infantryUnits = new List<MeleeSoldier>();
-    private readonly List<MeleeSoldier> _cavalryUnits = new List<MeleeSoldier>();
-    private readonly List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
+    private readonly List<MeleeSoldier> _infantryUnits = new();
+    private readonly List<MeleeSoldier> _cavalryUnits = new();
+    private readonly List<DistantSoldier> _rangedUnits = new();
 
-    public int armySize { get => _recruitsCount + _infantryUnits.Count + 
-            _cavalryUnits.Count + _rangedUnits.Count; }
+    public int armySize
+    {
+        get => _recruitsCount + _infantryUnits.Count +
+               _cavalryUnits.Count + _rangedUnits.Count;
+    }
 
     // Ссылки на текст для отображения в интерфейсе
     public TextMeshProUGUI pietyText;
@@ -76,8 +79,10 @@ public class Player : MonoBehaviour
         {
             throw new Exception("Вы не можете нанимать новобранцев сверх лимита");
         }
+
         _recruitsCount += amount;
     }
+
     public bool CanTrainRecruits()
     {
         return _recruitsCount > 0;
@@ -89,6 +94,7 @@ public class Player : MonoBehaviour
         {
             throw new Exception("Нет новобранцев для обучения");
         }
+
         _recruitsCount--;
 
         switch (unitType)
@@ -103,6 +109,7 @@ public class Player : MonoBehaviour
                 _rangedUnits.Add(UnitsInit.InitCrossbowSoldiers());
                 break;
         }
+
         UpdateUI();
     }
 
@@ -120,14 +127,14 @@ public class Player : MonoBehaviour
     private void UpdateRecruitsText()
     {
         var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
-        if (unitTextMesh != null) 
+        if (unitTextMesh != null)
             unitTextMesh.text = _recruitsCount.ToString();
     }
-    
+
     private void UpdateUnitText<T>(List<T> Units, string unitType)
     {
         var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
-        if (unitTextMesh != null) 
+        if (unitTextMesh != null)
             unitTextMesh.text = Units.Count.ToString();
     }
 
@@ -137,6 +144,7 @@ public class Player : MonoBehaviour
         {
             transform.position = position.position;
         }
+
         UpdateUI();
     }
 }
