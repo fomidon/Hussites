@@ -3,6 +3,8 @@ using TMPro;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using System;
+using System.Linq;
+using UnityEngine.Windows;
 
 public class Player : MonoBehaviour
 {
@@ -19,12 +21,17 @@ public class Player : MonoBehaviour
     public int Piety { get; private set; }
     public int Gold { get; private set; }
 
-    // Словари для хранения количества войск
+    // Списки для хранения количества войск
     public const int MaxArmySize = 20;
-    private int _recruitsCount = 0;
-    private readonly List<MeleeSoldier> _infantryUnits = new();
-    private readonly List<MeleeSoldier> _cavalryUnits = new();
-    private readonly List<DistantSoldier> _rangedUnits = new();
+    public int _recruitsCount { get; private set; } = 0;
+    private List<MeleeSoldier> _infantryUnits = new List<MeleeSoldier>();
+    public List<MeleeSoldier> infantryOutside{ get => _infantryUnits.ToList(); }
+
+    private List<MeleeSoldier> _cavalryUnits = new List<MeleeSoldier>();
+    public List<MeleeSoldier> cavalryOutside { get => _cavalryUnits.ToList(); }
+
+    private List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
+    public List<DistantSoldier> rangedUnitsOutside { get => _rangedUnits.ToList(); }
 
     public int armySize
     {
@@ -43,8 +50,22 @@ public class Player : MonoBehaviour
         Gold = startingGold;
 
         position = startPosition;
+    }
 
-        UpdateUI();
+    // Метод для установки начальных значений из сохранения
+    public void InitializeFromSave(ProgressData data)
+    {
+        Gold = data.Gold;
+        Piety = data.Piety;
+        position = GameObject.Find(data.Position).GetComponent<MapRegion>();
+        _recruitsCount = data.RecruitsData;
+
+        _infantryUnits = data.InfantryUnitsData.Select(x => UnitsInit.InitInfantrySoldiers(x))
+            .ToList();
+        _cavalryUnits = data.CavalryUnitsData.Select(x => UnitsInit.InitCavalrySoldiers(x))
+            .ToList();
+        _rangedUnits = data.DistantUnitsData.Select(x => UnitsInit.InitCrossbowSoldiers(x))
+            .ToList();
     }
 
     private void InitializeUnitDictionary(Dictionary<string, int> unitDict, string[] unitTypes)
@@ -56,14 +77,12 @@ public class Player : MonoBehaviour
     public void ModifyPiety(int amount)
     {
         Piety += amount;
-        UpdateUI();
     }
 
     // Метод для изменения золота
     public void ModifyGold(int amount)
     {
         Gold += amount;
-        UpdateUI();
     }
 
     // Метод для изменения количества войск
@@ -92,7 +111,7 @@ public class Player : MonoBehaviour
     {
         if (!CanTrainRecruits())
         {
-            throw new Exception("Нет новобранцев для обучения");
+            Debug.LogWarning("Нет новобранцев для обучения");
         }
 
         _recruitsCount--;
@@ -109,8 +128,6 @@ public class Player : MonoBehaviour
                 _rangedUnits.Add(UnitsInit.InitCrossbowSoldiers());
                 break;
         }
-
-        UpdateUI();
     }
 
     // Метод для обновления отображения в интерфейсе
@@ -127,15 +144,19 @@ public class Player : MonoBehaviour
     private void UpdateRecruitsText()
     {
         var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
-        if (unitTextMesh != null)
-            unitTextMesh.text = _recruitsCount.ToString();
+        if (unitTextMesh != null) 
+            unitTextMesh.text = (_recruitsCount * 250).ToString();
     }
-
-    private void UpdateUnitText<T>(List<T> Units, string unitType)
+    
+    private void UpdateUnitText<T>(List<T> Units, string unitType) where T: ISoldier
     {
         var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
         if (unitTextMesh != null)
-            unitTextMesh.text = Units.Count.ToString();
+        {
+            var soldiersNumber = Units.Select(x => x.NumberOfPeople).Sum();
+            var soldiersMaxNumber = Units.Select(x => x.MaxPeopleNumber).Sum();
+            unitTextMesh.text = soldiersNumber.ToString() + "/" + soldiersMaxNumber.ToString();
+        }
     }
 
     private void Update()
@@ -146,5 +167,20 @@ public class Player : MonoBehaviour
         }
 
         UpdateUI();
+        SaveTest();
+    }
+
+    public void SaveTest()
+    {
+        if (UnityEngine.Input.GetKeyUp(KeyCode.J))
+        {
+            HireRecruits(4);
+            TrainRecruit("Пехота");
+            TrainRecruit("Пехота");
+            TrainRecruit("Кавалерия");
+            TrainRecruit("Дальний бой");
+            Gold = 49992;
+            Piety = 38;
+        }
     }
 }
