@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,5 +47,14 @@ public class MeleeSoldier : IMeleeSoldier
         this.SingleSoldierDamage = SingleSoldierDamage;
         this.ChargeCoefficient = ChargeCoefficient;
         this.ChargeResistance = ChargeResistance;
+    }
+
+    public void SetHealthManually(double health)
+    {
+        if (health > MaxHealth)
+        {
+            throw new Exception("Слишком много здоровья у юнита");
+        }
+        GlobalHealth = health;
     }
 }
