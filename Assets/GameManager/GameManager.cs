@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
         if (ProgressSaveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
         {
             LoadFromSave(baseData);
-        } else
+        }
+        else
         {
             InitializeGame();
         }
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
         _player.position = currentRegion;
-        
+
         // UpdateUI();
     }
 
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             ProgressSaveManager.SaveProgress(SaveType.ManualSave, _player);
         }
+
         if (Input.GetKeyUp(KeyCode.F9))
         {
             if (ProgressSaveManager.TryReadFromSave(SaveType.ManualSave, out var saveData))
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(playerObject);
         }
+
         playerObject = Instantiate(playerPrefab);
         _player = playerObject.GetComponent<Player>();
         _player.InitializeFromSave(progressData);

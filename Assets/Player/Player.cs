@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
     public List<DistantSoldier> rangedUnitsOutside { get => _rangedUnits.ToList(); }
 
-    public int armySize
+    public int ArmySize
     {
         get => _recruitsCount + _infantryUnits.Count +
                _cavalryUnits.Count + _rangedUnits.Count;
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
     // Методы для найма и улучшения войск
     public bool CanHireRecruits(int amount)
     {
-        return armySize + amount <= MaxArmySize;
+        return ArmySize + amount <= MaxArmySize;
     }
 
     public void HireRecruits(int amount)
@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
     {
         if (position != null)
         {
-            transform.position = position.position;
+            transform.position = position.Position;
         }
 
         UpdateUI();

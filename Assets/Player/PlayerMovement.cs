@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public bool TryMovePosition(MapRegion region)
     {
         // Проверяем, допустимо ли перемещение на такое расстояние
-        if ((region.position - _currentPosition.position).magnitude > TransitionMaxLength)
+        if ((region.Position - _currentPosition.Position).magnitude > TransitionMaxLength)
         {
             return false;
         }
