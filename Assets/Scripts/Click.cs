@@ -25,7 +25,8 @@ public class Click : MonoBehaviour
                 //_image.gameObject.SetActive(true);
                 //_canClick = false;
                 
-                //Временно
+                //Временно 
+                // Если перестало работать - проверь привязан ли скрипт к объекту на сцене
                 ClickYes();
             }
         }
