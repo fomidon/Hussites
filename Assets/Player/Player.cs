@@ -33,8 +33,11 @@ public class Player : MonoBehaviour
     private List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
     public List<DistantSoldier> rangedUnitsOutside { get => _rangedUnits.ToList(); }
 
-    public int armySize { get => _recruitsCount + _infantryUnits.Count + 
-            _cavalryUnits.Count + _rangedUnits.Count; }
+    public int ArmySize
+    {
+        get => _recruitsCount + _infantryUnits.Count +
+               _cavalryUnits.Count + _rangedUnits.Count;
+    }
 
     // Ссылки на текст для отображения в интерфейсе
     public TextMeshProUGUI pietyText;
@@ -86,7 +89,7 @@ public class Player : MonoBehaviour
     // Методы для найма и улучшения войск
     public bool CanHireRecruits(int amount)
     {
-        return armySize + amount <= MaxArmySize;
+        return ArmySize + amount <= MaxArmySize;
     }
 
     public void HireRecruits(int amount)
@@ -95,8 +98,10 @@ public class Player : MonoBehaviour
         {
             throw new Exception("Вы не можете нанимать новобранцев сверх лимита");
         }
+
         _recruitsCount += amount;
     }
+
     public bool CanTrainRecruits()
     {
         return _recruitsCount > 0;
@@ -108,6 +113,7 @@ public class Player : MonoBehaviour
         {
             Debug.LogWarning("Нет новобранцев для обучения");
         }
+
         _recruitsCount--;
 
         switch (unitType)
@@ -157,8 +163,9 @@ public class Player : MonoBehaviour
     {
         if (position != null)
         {
-            transform.position = position.position;
+            transform.position = position.Position;
         }
+
         UpdateUI();
         SaveTest();
     }
