@@ -4,6 +4,9 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Farm _farm;
+    [SerializeField] private City _city;
+    [SerializeField] private EnemyProvince _enemyProvince;
     public GameObject playerPrefab; // Префаб игрока
     private Player _player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
@@ -52,6 +55,31 @@ public class GameManager : MonoBehaviour
     {
         currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
         //UpdateUI();
+    }
+
+    public void ShowRegion(MapRegion currentRegion)
+    {
+        switch (currentRegion.regionType)
+        {
+            case "farm":
+                _city.HideCity();
+                _enemyProvince.HideEnemyProvince();
+                _farm.ShowFarm();
+                break;
+            case "city":
+                _farm.HideFarm();
+                _enemyProvince.HideEnemyProvince();
+                _city.ShowCity();
+                break;
+            case "enemy":
+                _farm.HideFarm();
+                _city.HideCity();
+                _enemyProvince.ShowEnemyProvince();
+                break;
+            default:
+                Debug.LogWarning("Неизвестный тип региона");
+                break;
+        }
     }
 
     public void Update()

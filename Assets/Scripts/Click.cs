@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,12 +23,9 @@ public class Click : MonoBehaviour
             else if (Input.GetMouseButtonDown(1))
             {
                 GetRegionInfo();
-                //_image.gameObject.SetActive(true);
-                //_canClick = false;
+                _image.gameObject.SetActive(true);
+                _canClick = false;
                 
-                //Временно 
-                // Если перестало работать - проверь привязан ли скрипт к объекту на сцене
-                ClickYes();
             }
         }
     }
@@ -51,6 +49,7 @@ public class Click : MonoBehaviour
         if (_gameManager != null)
         {
             _gameManager.MovePlayerToRegion(_currentMapRegion);
+            _gameManager.ShowRegion(_currentMapRegion);
         }
         else
         {
@@ -63,11 +62,12 @@ public class Click : MonoBehaviour
         StartCoroutine(MovePlayerAfterDelay());
         ClickNo();
         
+
     }
 
     public void ClickNo()
     {
-        //_image.gameObject.SetActive(false);
+        _image.gameObject.SetActive(false);
         _canClick = true;
     }
 }

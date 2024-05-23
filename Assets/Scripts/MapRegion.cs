@@ -8,7 +8,7 @@ public class MapRegion : MonoBehaviour
     private static MapRegion previousSelectedRegion; // Ссылка на предыдущий выделенный регион
     public string regionName;
     public string regionType;
-    private float mouseBlockTimer = 0.5f;
+
     public Vector2 Position { get; private set; }
 
     void Start()
