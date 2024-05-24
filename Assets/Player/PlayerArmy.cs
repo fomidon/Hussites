@@ -174,4 +174,9 @@ public class PlayerArmy
                 return UnitsInit.InitCrossbowSoldiers(finish.Health);
             }).ToList();
     }
+
+    //Стоимость армии
+    public int ArmyMaintenance {  get => _infantryUnits.Count * ArmyCosts.InfantryMaintenance +
+            _cavalryUnits.Count * ArmyCosts.CavalryMaintenance + 
+            _rangedUnits.Count * ArmyCosts.CrossbowMenMaintenance; }
 }

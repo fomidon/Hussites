@@ -50,12 +50,20 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
-    public void Teleport(MapRegion region)
+    public void Teleport(Player player, MapRegion region)
     {
         _currentPosition = region;
         if (region.regionType.ToLower() != "enemy")
         {
             _lastFriendlyPosition = _currentPosition;
         }
+        player.position = _currentPosition;
+    }
+    
+    // Телепорт в последнюю дружественную позицию
+    public MapRegion EmergencyTeleport(Player player)
+    {
+        Teleport(player, _lastFriendlyPosition);
+        return _lastFriendlyPosition;
     }
 }

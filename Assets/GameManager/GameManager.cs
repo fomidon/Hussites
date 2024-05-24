@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
     public MapRegion currentRegion; // Текущий регион, в котором находится игрок
     public bool standartInterfaceBlock = false;
     private GameObject playerObject;
+    public ProgressSaveManager saveManager;
 
     private void Start()
     {
-        if (ProgressSaveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
+        saveManager = new ProgressSaveManager();
+        if (saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
         {
             LoadFromSave(baseData);
         }
@@ -95,7 +97,7 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         SaveHotkeys();
-        if (TurnManager.Instance.EndTurnToCompute)
+        if (1 == 0 && TurnManager.Instance.EndTurnToCompute)
         {
             TurnManager.Instance.EndTurnToCompute = false;
             EndTurnCompute(TurnManager.Instance.TurnsCount);
@@ -106,12 +108,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.F5))
         {
-            ProgressSaveManager.SaveProgress(SaveType.ManualSave, _player);
+            saveManager.SaveProgress(SaveType.ManualSave, _player);
         }
 
         if (Input.GetKeyUp(KeyCode.F9))
         {
-            if (ProgressSaveManager.TryReadFromSave(SaveType.ManualSave, out var saveData))
+            if (saveManager.TryReadFromSave(SaveType.ManualSave, out var saveData))
             {
                 LoadFromSave(saveData);
             }
@@ -120,7 +122,17 @@ public class GameManager : MonoBehaviour
 
     public void EndTurnCompute(int turn)
     {
-        
+        if (_player.ArmyMaintenance())
+        {
+            currentRegion = _playerMovement.EmergencyTeleport(_player); 
+        }
+        try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
+
+    }
+
+    public void TurnEvents(int turn)
+    {
+       throw new NotImplementedException();
     }
 
     public void LoadFromSave(ProgressData progressData)

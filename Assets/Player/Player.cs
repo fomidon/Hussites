@@ -80,25 +80,23 @@ public class Player : MonoBehaviour
         }
 
         UpdateUI();
-        SaveTest();
     }
 
-    public void SaveTest()
+    public bool ArmyMaintenance()
     {
-        if (UnityEngine.Input.GetKeyUp(KeyCode.J))
+        if (position.regionType.ToLower() != "enemy")
         {
-            army.HireRecruits(4);
-            army.TrainRecruit("Пехота");
-            army.TrainRecruit("Пехота");
-            army.TrainRecruit("Кавалерия");
-            army.TrainRecruit("Дальний бой");
-            Gold = 49992;
-            Piety = 38;
+            return false;
         }
-    }
 
-    public void ArmyMaintenance()
-    {
-        
+        if (Gold - army.ArmyMaintenance > 0)
+        {
+            Gold -= army.ArmyMaintenance;
+            return false;
+        } else
+        {
+            Gold = 0;
+            return true;
+        }
     }
 }

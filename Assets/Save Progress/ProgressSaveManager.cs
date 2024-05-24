@@ -14,7 +14,9 @@ public enum SaveType
 
 public class ProgressSaveManager
 {
-    public static void SaveProgress(SaveType saveType, Player player)
+    private ProgressData TemporalSave;
+
+    public void SaveProgress(SaveType saveType, Player player)
     {
         var fileName = saveType.ToString() + ".json";
         var playerData = new ProgressData(player);
@@ -22,7 +24,7 @@ public class ProgressSaveManager
         File.WriteAllText(fileName, playerDataSerialized);
     }
 
-    public static bool TryReadFromSave(SaveType saveType, out ProgressData playerData)
+    public bool TryReadFromSave(SaveType saveType, out ProgressData playerData)
     {
         var fileName = saveType.ToString() + ".json";
         if (!File.Exists(fileName)) 
@@ -34,4 +36,5 @@ public class ProgressSaveManager
         playerData = JsonSerializer.Deserialize<ProgressData>(playerDataSerialized);
         return true;
     }
+    
 }

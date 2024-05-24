@@ -16,6 +16,8 @@ public class ProgressData
     public double DamageModifier { get; set; }
     public double DamageResistanceModifier { get; set; }
 
+    public int Turn { get; set; }
+
     public ProgressData()
     {
 
@@ -32,6 +34,7 @@ public class ProgressData
         Position = player.position.name;
         DamageModifier = player.army.DamageModifier;
         DamageResistanceModifier = player.army.DamageResistanceModifier;
+        Turn = TurnManager.Instance.TurnsCount;
     }
 
     public ProgressData(int recruitsData, List<double> infantryUnitsData, 

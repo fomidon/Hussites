@@ -6,11 +6,11 @@ public class ArmyCosts
     public const int TrophyCoeff = 5;
     public const int MaintenanceCoeff = 20;
 
-    public int InfantryTrophy { get => InfantryCost / TrophyCoeff; }
-    public int CavalryTrophy { get => CavalryCost / TrophyCoeff; }
-    public int CrossbowMenTrophy { get => CrossbowMenCost / TrophyCoeff; }
+    public static int InfantryTrophy { get => InfantryCost / TrophyCoeff; }
+    public static int CavalryTrophy { get => CavalryCost / TrophyCoeff; }
+    public static int CrossbowMenTrophy { get => CrossbowMenCost / TrophyCoeff; }
 
-    public int InfantryMaintenance { get => InfantryCost / MaintenanceCoeff; }
-    public int CavalryMaintenance { get => CavalryCost / MaintenanceCoeff; }
-    public int CrossbowMenMaintenance { get => CrossbowMenCost / MaintenanceCoeff; }
+    public static int InfantryMaintenance { get => InfantryCost / MaintenanceCoeff; }
+    public static int CavalryMaintenance { get => CavalryCost / MaintenanceCoeff; }
+    public static int CrossbowMenMaintenance { get => CrossbowMenCost / MaintenanceCoeff; }
 }

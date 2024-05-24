@@ -63,8 +63,21 @@ public class TurnManager : MonoBehaviour
     public void EndTurn()
     {
         TurnsCount++;
-        turnsCountTMP.text = $"Ход: {TurnsCount}";
+        //turnsCountTMP.text = $"Ход: {TurnsCount}";
         EndTurnToCompute = true;
         StartTurn();
+    }
+
+    private void Update()
+    {
+        CheatTurn();
+    }
+
+    public void CheatTurn()
+    {
+        if (Input.GetKeyDown(KeyCode.F1)) 
+        {
+            EndTurn();
+        }
     }
 }
