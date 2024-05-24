@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         // Проверяем, является ли целевой регион доступным для перемещения из текущего региона
         if (TryMovePosition(targetRegion))
         {
+            TurnManager.Instance.UseMove();
             player.position = _currentPosition;
         }
         else
@@ -37,16 +38,24 @@ public class PlayerMovement : MonoBehaviour
         {
             return false;
         }
-
-        // Если регион - вражеский, обновляем последнюю позицию дружественных войск
-        if (region.regionType.ToLower() == "enemy")
-        {
-            _lastFriendlyPosition = _currentPosition;
-        }
-
+        
         // Обновляем текущую позицию игрока
         _currentPosition = region;
 
+        // Если регион - не вражеский, обновляем последнюю позицию дружественных войск
+        if (region.regionType.ToLower() != "enemy")
+        {
+            _lastFriendlyPosition = _currentPosition;
+        }
         return true;
+    }
+
+    public void Teleport(MapRegion region)
+    {
+        _currentPosition = region;
+        if (region.regionType.ToLower() != "enemy")
+        {
+            _lastFriendlyPosition = _currentPosition;
+        }
     }
 }

@@ -49,7 +49,6 @@ public class Click : MonoBehaviour
         if (_gameManager != null)
         {
             _gameManager.MovePlayerToRegion(_currentMapRegion);
-            _gameManager.ShowRegion(_currentMapRegion);
         }
         else
         {

@@ -16,7 +16,6 @@ public class EnemyProvince : MonoBehaviour
     public void ClickRob()
     {
         _player.ModifyGold(30000);
-        Debug.Log(_player.army._recruitsCount);
     }
     
     public void HideEnemyProvince()

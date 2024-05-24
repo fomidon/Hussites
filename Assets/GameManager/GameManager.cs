@@ -56,7 +56,11 @@ public class GameManager : MonoBehaviour
     // Метод для перемещения игрока в указанный регион
     public void MovePlayerToRegion(MapRegion targetRegion)
     {
-        currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
+        if (TurnManager.Instance.CanMove())
+        {
+            currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
+            ShowRegion(currentRegion);
+        }
         //UpdateUI();
     }
 
@@ -91,6 +95,11 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         SaveHotkeys();
+        if (TurnManager.Instance.EndTurnToCompute)
+        {
+            TurnManager.Instance.EndTurnToCompute = false;
+            EndTurnCompute(TurnManager.Instance.TurnsCount);
+        }
     }
 
     public void SaveHotkeys()
@@ -107,6 +116,11 @@ public class GameManager : MonoBehaviour
                 LoadFromSave(saveData);
             }
         }
+    }
+
+    public void EndTurnCompute(int turn)
+    {
+        
     }
 
     public void LoadFromSave(ProgressData progressData)

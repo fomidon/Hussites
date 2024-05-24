@@ -96,4 +96,9 @@ public class Player : MonoBehaviour
             Piety = 38;
         }
     }
+
+    public void ArmyMaintenance()
+    {
+        
+    }
 }
