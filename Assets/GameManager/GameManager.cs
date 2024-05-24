@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
         {
             InitializeGame();
         }
+        _farm._player = _player;
+        _city._player = _player;
+        _enemyProvince._player = _player;
     }
 
     private void InitializeGame()

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class City : MonoBehaviour
 {
     [SerializeField] private Image _image;
-    [SerializeField] private Player _player;
+    [SerializeField] public Player _player;
     private bool _canClick = true;
     private MapRegion _currentMapRegion;
 
@@ -34,7 +34,6 @@ public class City : MonoBehaviour
     
     public void HideCity()
     {
-        Debug.Log("aaa");
         _image.gameObject.SetActive(false);
     }
 }
