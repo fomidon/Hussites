@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour
                 _enemyProvince.ShowEnemyProvince();
                 break;
             default:
+                _farm.HideFarm();
+                _city.HideCity();
+                _enemyProvince.HideEnemyProvince();
                 Debug.LogWarning("Неизвестный тип региона");
                 break;
         }

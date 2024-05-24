@@ -16,20 +16,20 @@ public class City : MonoBehaviour
     public void ClickTrainInfantry()
     
     {
-        _player.TrainRecruit("Пехота");
-        Debug.Log(_player.infantryOutside.Count);
+        _player.army.TrainRecruit("Пехота");
+        Debug.Log(_player.army.infantryOutside.Count);
     }
     
     public void ClickTrainCavarly()
     {
-        _player.TrainRecruit("Кавалерия");
-        Debug.Log(_player.cavalryOutside.Count);
+        _player.army.TrainRecruit("Кавалерия");
+        Debug.Log(_player.army.cavalryOutside.Count);
     }
     
     public void ClickTrainRanged()
     {
-        _player.TrainRecruit("Дальний бой");
-        Debug.Log(_player.rangedUnitsOutside.Count);
+        _player.army.TrainRecruit("Дальний бой");
+        Debug.Log(_player.army.rangedUnitsOutside.Count);
     }
     
     public void HideCity()

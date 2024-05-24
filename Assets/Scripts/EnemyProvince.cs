@@ -15,8 +15,8 @@ public class EnemyProvince : MonoBehaviour
     
     public void ClickRob()
     {
-        _player.HireRecruits(1);
-        Debug.Log(_player._recruitsCount);
+        _player.army.HireRecruits(1);
+        Debug.Log(_player.army._recruitsCount);
     }
     
     public void HideEnemyProvince()
