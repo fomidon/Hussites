@@ -10,6 +10,7 @@ public class Farm : MonoBehaviour
 
     public void ShowFarm()
     {
+        Debug.Log("aaa");
         _image.gameObject.SetActive(true);
     }
     

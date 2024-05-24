@@ -13,6 +13,9 @@ public class ProgressData
     public int Piety { get; set; }
     public string Position { get; set; }
 
+    public double DamageModifier { get; set; }
+    public double DamageResistanceModifier { get; set; }
+
     public ProgressData()
     {
 
@@ -27,11 +30,13 @@ public class ProgressData
         Gold = player.Gold;
         Piety = player.Piety;
         Position = player.position.name;
+        DamageModifier = player.army.DamageModifier;
+        DamageResistanceModifier = player.army.DamageResistanceModifier;
     }
 
     public ProgressData(int recruitsData, List<double> infantryUnitsData, 
         List<double> cavalryUnitsData, List<double> distantUnitsData, 
-        int gold, int piety, string position)
+        int gold, int piety, string position, double DamageModifier, double DamageResistanceModifier)
     {
         RecruitsData = recruitsData;
         InfantryUnitsData = infantryUnitsData;
@@ -40,5 +45,7 @@ public class ProgressData
         Gold = gold;
         Piety = piety;
         Position = position;
+        this.DamageModifier = DamageModifier;
+        this.DamageResistanceModifier = DamageResistanceModifier;
     }
 }

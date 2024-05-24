@@ -10,9 +10,11 @@ public interface IUniversalSoldier
 
     public IDistantSoldier distantData { get; set; }
 
+    public UnitsType unitType { get; }
+
     public bool meleeFlag { get; }
 
-    public bool TryToMelee (out IMeleeSoldier melee)
+    public bool TryToMelee(out IMeleeSoldier melee)
     {
         melee = meleeData;
         return meleeFlag;
@@ -29,7 +31,8 @@ public interface IUniversalSoldier
         if (meleeFlag)
         {
             return meleeData.NumberOfPeople;
-        } else
+        }
+        else
         {
             return distantData.NumberOfPeople;
         }

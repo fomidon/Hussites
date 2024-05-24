@@ -93,8 +93,8 @@ public class PlayerArmy
         _infantryUnits = save.InfantryUnitsData.Select(x => UnitsInit.InitInfantrySoldiers(x)).ToList();
         _cavalryUnits = save.CavalryUnitsData.Select(x => UnitsInit.InitCavalrySoldiers(x)).ToList();
         _rangedUnits = save.DistantUnitsData.Select(x => UnitsInit.InitCrossbowSoldiers(x)).ToList();
-        //DamageModifier = save.DamageModifier;
-        //DamageResistanceModifier = save.DamageResistanceModifier;
+        DamageModifier = save.DamageModifier;
+        DamageResistanceModifier = save.DamageResistanceModifier;
     }
 
     // Интерфейс показа юнитов на экране
@@ -128,8 +128,6 @@ public class PlayerArmy
     {
         DamageModifier *= 1 + valueInPersents / 100d;
     }
-
-    /*
 
     public void GetDamageResistanceModifier(int valueInPersents)
     {
@@ -176,5 +174,4 @@ public class PlayerArmy
                 return UnitsInit.InitCrossbowSoldiers(finish.Health);
             }).ToList();
     }
-    */
 }

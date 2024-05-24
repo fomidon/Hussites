@@ -34,6 +34,7 @@ public class City : MonoBehaviour
     
     public void HideCity()
     {
+        Debug.Log("aaa");
         _image.gameObject.SetActive(false);
     }
 }

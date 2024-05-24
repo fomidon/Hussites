@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 public class MeleeSoldier : IMeleeSoldier
 {
+    public UnitsType unitType { get; }
+
     public double MaxHealth { get; private set; }
 
     public int MaxPeopleNumber { get; private set; }
@@ -15,11 +17,11 @@ public class MeleeSoldier : IMeleeSoldier
 
     public double Health { get => GlobalHealth - HealthLossesOnBattle; }
 
-    public int NumberOfPeople { get => (int)Math.Ceiling( Health / MaxHealth * MaxPeopleNumber ); }
+    public int NumberOfPeople { get => (int)Math.Ceiling(Health / MaxHealth * MaxPeopleNumber); }
 
     public double SingleSoldierDamage { get; private set; }
 
-    public double Damage { get => SingleSoldierDamage * NumberOfPeople; }
+    public double Damage { get => SingleSoldierDamage * NumberOfPeople * DamageModifier; }
 
     public double ChargeCoefficient { get; private set; }
 
@@ -27,9 +29,12 @@ public class MeleeSoldier : IMeleeSoldier
 
     public double HealthLossesOnBattle { get; private set; } = 0;
 
+    public double DamageModifier { get; private set; } = 1;
+    public double DamageResistModifier { get; private set; } = 1;
+
     public void GetDamage(double damage)
     {
-        HealthLossesOnBattle += Math.Min(damage, Health);
+        HealthLossesOnBattle += Math.Min(damage * DamageResistModifier, Health);
     }
 
     public void CalculateLosses()
@@ -39,7 +44,7 @@ public class MeleeSoldier : IMeleeSoldier
     }
 
     public MeleeSoldier(int MaxPeopleNumber, double SingleSoldierHealth, double SingleSoldierDamage,
-        double ChargeCoefficient, double ChargeResistance)
+        double ChargeCoefficient, double ChargeResistance, UnitsType unitType)
     {
         this.MaxPeopleNumber = MaxPeopleNumber;
         MaxHealth = SingleSoldierHealth * MaxPeopleNumber;
@@ -47,6 +52,7 @@ public class MeleeSoldier : IMeleeSoldier
         this.SingleSoldierDamage = SingleSoldierDamage;
         this.ChargeCoefficient = ChargeCoefficient;
         this.ChargeResistance = ChargeResistance;
+        this.unitType = unitType;
     }
 
     public void SetHealthManually(double health)
@@ -56,5 +62,11 @@ public class MeleeSoldier : IMeleeSoldier
             throw new Exception("Слишком много здоровья у юнита");
         }
         GlobalHealth = health;
+    }
+
+    public void SetModificators(double damageModifier, double damageResistModifier)
+    {
+        DamageModifier = damageModifier;
+        DamageResistModifier = damageResistModifier;
     }
 }

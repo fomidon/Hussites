@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 public class DistantSoldier : IDistantSoldier
 {
+    public UnitsType unitType { get; }
+
     public int BaseAmmunition { get; } = 20;
 
     public int CurrentAmmunition { get; private set; }
@@ -22,13 +24,13 @@ public class DistantSoldier : IDistantSoldier
 
     public double SingleSoldierDamage { get; private set; }
 
-    public double Damage { get => SingleSoldierDamage * NumberOfPeople; }
+    public double Damage { get => SingleSoldierDamage * NumberOfPeople * DamageModifier; }
 
     public double HealthLossesOnBattle { get; private set; } = 0;
 
     public void GetDamage(double damage)
     {
-        HealthLossesOnBattle += Math.Min(damage, Health);
+        HealthLossesOnBattle += Math.Min(damage * DamageResistModifier, Health);
     }
 
     public void CalculateLosses()
@@ -37,13 +39,17 @@ public class DistantSoldier : IDistantSoldier
         HealthLossesOnBattle = 0;
     }
 
-    public DistantSoldier(int MaxPeopleNumber, double SingleSoldierHealth, double SingleSoldierDamage)
+    public double DamageModifier { get; private set; } = 1;
+    public double DamageResistModifier { get; private set; } = 1;
+
+    public DistantSoldier(int MaxPeopleNumber, double SingleSoldierHealth, double SingleSoldierDamage, UnitsType unitType)
     {
         this.MaxPeopleNumber = MaxPeopleNumber;
         MaxHealth = SingleSoldierHealth * MaxPeopleNumber;
         GlobalHealth = MaxHealth;
         this.SingleSoldierDamage = SingleSoldierDamage;
         CurrentAmmunition = BaseAmmunition;
+        this.unitType = unitType;
     }
 
     public void Volley()
@@ -58,5 +64,11 @@ public class DistantSoldier : IDistantSoldier
             throw new Exception("Слишком много здоровья у юнита");
         }
         GlobalHealth = health;
+    }
+
+    public void SetModificators(double damageModifier, double damageResistModifier)
+    {
+        DamageModifier = damageModifier;
+        DamageResistModifier = damageResistModifier;
     }
 }

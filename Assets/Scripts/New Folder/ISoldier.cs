@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 public interface ISoldier
 {
     public double Health { get; }
-    
+
     public double Damage { get; }
 
     public void GetDamage(double damage);
-    
-    public double HealthLossesOnBattle {  get; }
+
+    public double HealthLossesOnBattle { get; }
 
     public void CalculateLosses();
 
     public int NumberOfPeople { get; }
 
     public int MaxPeopleNumber { get; }
+
+    public UnitsType unitType { get; }
 }
