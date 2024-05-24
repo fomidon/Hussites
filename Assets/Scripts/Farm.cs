@@ -16,7 +16,7 @@ public class Farm : MonoBehaviour
     public void ClickHire()
     {
         _player.army.HireRecruits(1);
-        Debug.Log(_player.army._recruitsCount);
+        //Debug.Log(_player.army._recruitsCount);
     }
     
     public void HideFarm()

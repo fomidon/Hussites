@@ -16,10 +16,19 @@ public class ProgressSaveManager
 {
     private ProgressData TemporalSave;
 
+    public ProgressSaveManager(SaveType saveType = SaveType.BasicSave)
+    {
+        if (TryReadFromSave(saveType, out var playerData))
+        {
+            TemporalSave = playerData;
+        }
+    }
+
     public void SaveProgress(SaveType saveType, Player player)
     {
         var fileName = saveType.ToString() + ".json";
-        var playerData = new ProgressData(player);
+        var playerData = TemporalSave;
+        Debug.Log(playerData.Turn);
         var playerDataSerialized = JsonSerializer.Serialize(playerData);
         File.WriteAllText(fileName, playerDataSerialized);
     }
@@ -37,4 +46,8 @@ public class ProgressSaveManager
         return true;
     }
     
+    public void BeginTurn(Player player)
+    {
+        TemporalSave = new ProgressData(player);
+    }
 }

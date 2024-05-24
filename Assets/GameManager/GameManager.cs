@@ -97,10 +97,16 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         SaveHotkeys();
-        if (1 == 0 && TurnManager.Instance.EndTurnToCompute)
+        if (TurnManager.Instance.EndTurnToCompute)
         {
             TurnManager.Instance.EndTurnToCompute = false;
             EndTurnCompute(TurnManager.Instance.TurnsCount);
+        }
+
+        if (TurnManager.Instance.BeginTurnToCompute)
+        {
+            TurnManager.Instance.BeginTurnToCompute = false;
+            BeginTurnCompute(TurnManager.Instance.TurnsCount);
         }
     }
 
@@ -126,8 +132,12 @@ public class GameManager : MonoBehaviour
         {
             currentRegion = _playerMovement.EmergencyTeleport(_player); 
         }
-        try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
+    }
 
+    public void BeginTurnCompute(int turn) 
+    {
+        saveManager.BeginTurn(_player);
+        try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
     }
 
     public void TurnEvents(int turn)
@@ -156,5 +166,8 @@ public class GameManager : MonoBehaviour
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
         _player.position = currentRegion;
+
+        //Номер и начало хода
+        TurnManager.Instance.LoadFromSave(progressData);
     }
 }

@@ -21,7 +21,7 @@ public class City : MonoBehaviour
         }
         _player.ModifyGold(-ArmyCosts.InfantryCost);
         _player.army.TrainRecruit("Пехота");
-        Debug.Log(_player.army.infantryOutside.Count);
+        //Debug.Log(_player.army.infantryOutside.Count);
     }
 
     public void ClickTrainCavarly()
