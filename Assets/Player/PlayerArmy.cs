@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerArmy
 {
-    // Списки для хранения количества войск
+    // РЎРїРёСЃРєРё РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РєРѕР»РёС‡РµСЃС‚РІР° РІРѕР№СЃРє
     public const int MaxArmySize = 20;
 
     public int _recruitsCount { get; private set; } = 0;
@@ -29,7 +29,7 @@ public class PlayerArmy
             _cavalryUnits.Count + _rangedUnits.Count;
     }
 
-    // Методы для найма и улучшения войск
+    // РњРµС‚РѕРґС‹ РґР»СЏ РЅР°Р№РјР° Рё СѓР»СѓС‡С€РµРЅРёСЏ РІРѕР№СЃРє
     public bool CanHireRecruits(int amount)
     {
         return armySize + amount <= MaxArmySize;
@@ -39,7 +39,7 @@ public class PlayerArmy
     {
         if (!CanHireRecruits(amount))
         {
-            Debug.LogWarning("Вы не можете нанимать новобранцев сверх лимита");
+            Debug.LogWarning("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РЅР°РЅРёРјР°С‚СЊ РЅРѕРІРѕР±СЂР°РЅС†РµРІ СЃРІРµСЂС… Р»РёРјРёС‚Р°");
             return;
         }
         _recruitsCount += amount;
@@ -53,26 +53,26 @@ public class PlayerArmy
     {
         if (!CanTrainRecruits())
         {
-            Debug.LogWarning("Нет новобранцев для обучения");
+            Debug.LogWarning("РќРµС‚ РЅРѕРІРѕР±СЂР°РЅС†РµРІ РґР»СЏ РѕР±СѓС‡РµРЅРёСЏ");
             return;
         }
         _recruitsCount--;
 
         switch (unitType)
         {
-            case "Пехота":
+            case "РџРµС…РѕС‚Р°":
                 _infantryUnits.Add(UnitsInit.InitInfantrySoldiers());
                 break;
-            case "Кавалерия":
+            case "РљР°РІР°Р»РµСЂРёСЏ":
                 _cavalryUnits.Add(UnitsInit.InitCavalrySoldiers());
                 break;
-            case "Дальний бой":
+            case "Р”Р°Р»СЊРЅРёР№ Р±РѕР№":
                 _rangedUnits.Add(UnitsInit.InitCrossbowSoldiers());
                 break;
         }
     }
 
-    // Конструкторы
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
     public PlayerArmy()
     {
         _recruitsCount = 0;
@@ -97,18 +97,18 @@ public class PlayerArmy
         DamageResistanceModifier = save.DamageResistanceModifier;
     }
 
-    // Интерфейс показа юнитов на экране
+    // РРЅС‚РµСЂС„РµР№СЃ РїРѕРєР°Р·Р° СЋРЅРёС‚РѕРІ РЅР° СЌРєСЂР°РЅРµ
     public void UpdateUI()
     {
         UpdateRecruitsText();
-        UpdateUnitText(_infantryUnits, "Пехота");
-        UpdateUnitText(_cavalryUnits, "Кавалерия");
-        UpdateUnitText(_rangedUnits, "Дальний бой");
+        UpdateUnitText(_infantryUnits, "РџРµС…РѕС‚Р°");
+        UpdateUnitText(_cavalryUnits, "РљР°РІР°Р»РµСЂРёСЏ");
+        UpdateUnitText(_rangedUnits, "Р”Р°Р»СЊРЅРёР№ Р±РѕР№");
     }
 
     private void UpdateRecruitsText()
     {
-        var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
+        var unitTextMesh = GameObject.Find($"Text (РќРѕРІРѕР±СЂР°РЅС†С‹)").GetComponent<TextMeshProUGUI>();
         if (unitTextMesh != null)
             unitTextMesh.text = (_recruitsCount * 250).ToString();
     }
@@ -175,7 +175,7 @@ public class PlayerArmy
             }).ToList();
     }
 
-    //Стоимость армии
+    //РЎС‚РѕРёРјРѕСЃС‚СЊ Р°СЂРјРёРё
     public int ArmyMaintenance {  get => _infantryUnits.Count * ArmyCosts.InfantryMaintenance +
             _cavalryUnits.Count * ArmyCosts.CavalryMaintenance + 
             _rangedUnits.Count * ArmyCosts.CrossbowMenMaintenance; }
