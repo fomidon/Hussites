@@ -5,7 +5,6 @@ public class City : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
-    private bool _canClick = true;
     private MapRegion _currentMapRegion;
 
     public void ShowCity()

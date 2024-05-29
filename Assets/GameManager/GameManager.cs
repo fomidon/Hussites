@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Farm _farm;
     [SerializeField] private City _city;
     [SerializeField] private EnemyProvince _enemyProvince;
+    [SerializeField] private FightWindow _fightWindow;
     public GameObject playerPrefab; // Префаб игрока
     private Player _player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
@@ -83,7 +84,8 @@ public class GameManager : MonoBehaviour
             case "enemy":
                 _farm.HideFarm();
                 _city.HideCity();
-                _enemyProvince.ShowEnemyProvince();
+                _enemyProvince.HideEnemyProvince();
+                _fightWindow.ShowFightWindow();
                 break;
             default:
                 _farm.HideFarm();
