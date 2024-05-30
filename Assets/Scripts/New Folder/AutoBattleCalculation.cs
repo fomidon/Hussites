@@ -86,22 +86,25 @@ public static class AutoBattleCalculation
         return (firstUnit, secondUnit);
     }
 
-    public static (List<IMeleeSoldier>, List<IMeleeSoldier>) MeleePhase(List<IMeleeSoldier> firstMeleeArmy, 
+    public static (List<IMeleeSoldier>, List<IMeleeSoldier>, bool resultFlag) MeleePhase(
+        List<IMeleeSoldier> firstMeleeArmy, 
         List<IDistantSoldier> firstDistantArmy, List<IMeleeSoldier> secondMeleeArmy, 
         List<IDistantSoldier> secondDistantArmy)
     {
+        bool resultFlag = true;
         while (true)
         {
             firstMeleeArmy = firstMeleeArmy.OrderBy(x => x.Health).ToList();
             secondMeleeArmy = secondMeleeArmy.OrderBy(x => x.Health).ToList();
             if (Math.Min(firstMeleeArmy[^1].Health, secondMeleeArmy[^1].Health) <= 1e-9)
             {
+                resultFlag = secondMeleeArmy[^1].Health <= 1e-9;
                 break;
             }
             (firstMeleeArmy[^1], secondMeleeArmy[^1]) = MeleeEpisode(firstMeleeArmy[^1], secondMeleeArmy[^1],
                 firstDistantArmy, secondDistantArmy);
         }
-        return (firstMeleeArmy, secondMeleeArmy);
+        return (firstMeleeArmy, secondMeleeArmy, resultFlag);
     }
 
     private static List<UniversalSoldier> CalculateOneArmyLosses(
@@ -153,7 +156,7 @@ public static class AutoBattleCalculation
                                           ).ToList();
     }
 
-    public static (List<IUniversalSoldier>, List<IUniversalSoldier>) AutoBattleCalculate(
+    public static (List<IUniversalSoldier>, List<IUniversalSoldier>, bool resultFlag) AutoBattleCalculate(
         List<IUniversalSoldier> firstArmy, List<IUniversalSoldier> secondArmy)
     {
         var firstDistanceArmy = BuildDistanceArmy(firstArmy);
@@ -166,11 +169,12 @@ public static class AutoBattleCalculation
         
         var firstMeleeArmy = BuildMeleeArmy(firstArmy);
         var secondMeleeArmy = BuildMeleeArmy(secondArmy);
-        (firstMeleeArmy, secondMeleeArmy) = MeleePhase(firstMeleeArmy, firstDistanceArmy, 
+        bool resultFlag;
+        (firstMeleeArmy, secondMeleeArmy, resultFlag) = MeleePhase(firstMeleeArmy, firstDistanceArmy, 
             secondMeleeArmy, secondDistanceArmy);
 
         (firstArmy, secondArmy) = CalculateFullLosses(firstDistanceArmy, secondDistanceArmy,
             firstMeleeArmy, secondMeleeArmy);
-        return (firstArmy, secondArmy);
+        return (firstArmy, secondArmy, resultFlag);
     }
 }
