@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class MeleeSoldier : IMeleeSoldier
 {
@@ -27,7 +28,7 @@ public class MeleeSoldier : IMeleeSoldier
 
     public double ChargeResistance { get; private set; }
 
-    public double HealthLossesOnBattle { get; private set; } = 0;
+    public double HealthLossesOnBattle { get; private set; }
 
     public double DamageModifier { get; private set; } = 1;
     public double DamageResistModifier { get; private set; } = 1;
@@ -53,6 +54,8 @@ public class MeleeSoldier : IMeleeSoldier
         this.ChargeCoefficient = ChargeCoefficient;
         this.ChargeResistance = ChargeResistance;
         this.unitType = unitType;
+        DamageModifier = 1;
+        DamageResistModifier = 1;
     }
 
     public void SetHealthManually(double health)

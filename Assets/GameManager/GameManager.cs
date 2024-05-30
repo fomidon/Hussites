@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         _farm._player = _player;
         _city._player = _player;
         _enemyProvince._player = _player;
+        _fightWindow._player = _player;
+        _fightWindow.movement = _playerMovement;
     }
 
     private void InitializeGame()
@@ -138,6 +140,7 @@ public class GameManager : MonoBehaviour
 
     public void BeginTurnCompute(int turn) 
     {
+        _player.army.GetArmyForBattle();
         saveManager.BeginTurn(_player);
         try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
     }
