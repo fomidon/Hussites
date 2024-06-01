@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,11 +6,12 @@ public class City : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
-    private MapRegion _currentMapRegion;
+    [SerializeField] public TMP_Text _regionName;
 
-    public void ShowCity()
+    public void ShowCity(MapRegion _currentMapRegion)
     {
         _image.gameObject.SetActive(true);
+        _regionName.text = _currentMapRegion.regionName;
     }
 
     public void ClickTrainInfantry()

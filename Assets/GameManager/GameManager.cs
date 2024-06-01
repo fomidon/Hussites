@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Farm _farm;
@@ -81,7 +79,7 @@ public class GameManager : MonoBehaviour
             case "city":
                 _farm.HideFarm();
                 _enemyProvince.HideEnemyProvince();
-                _city.ShowCity();
+                _city.ShowCity(currentRegion);
                 break;
             case "enemy":
                 _farm.HideFarm();

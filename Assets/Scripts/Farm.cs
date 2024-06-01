@@ -7,13 +7,11 @@ public class Farm : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
     [SerializeField] public TMP_Text _regionName;
-    // private MapRegion _currentMapRegion;
 
     public void ShowFarm(MapRegion _currentMapRegion)
     {
         _image.gameObject.SetActive(true);
-        var name = _currentMapRegion;
-        _regionName.text = name.regionName;
+        _regionName.text = _currentMapRegion.regionName;
 
     }
     
