@@ -72,16 +72,19 @@ public class GameManager : MonoBehaviour
         switch (currentRegion.regionType)
         {
             case "farm":
+                this.currentRegion.DeselectRegion();
                 _city.HideCity();
                 _enemyProvince.HideEnemyProvince();
                 _farm.ShowFarm(currentRegion);
                 break;
             case "city":
+                this.currentRegion.DeselectRegion();
                 _farm.HideFarm();
                 _enemyProvince.HideEnemyProvince();
                 _city.ShowCity(currentRegion);
                 break;
             case "enemy":
+                this.currentRegion.DeselectRegion();
                 _farm.HideFarm();
                 _city.HideCity();
                 _enemyProvince.HideEnemyProvince();

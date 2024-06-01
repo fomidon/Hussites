@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class MapRegion : MonoBehaviour
 {
+    [SerializeField] private Image _regionInfo;
+    [SerializeField] private TMP_Text _regionInfoName;
+    [SerializeField] private TMP_Text _regionInfoType;
     private Sprite _normalTexture; // Обычная текстура региона
     public Sprite highlightTexture; // Текстура региона при выделении
     private SpriteRenderer spriteRenderer; // Ссылка на SpriteRenderer региона
@@ -26,10 +31,15 @@ public class MapRegion : MonoBehaviour
         // Выделяем текущий регион
         spriteRenderer.sprite = highlightTexture;
         previousSelectedRegion = this;
+        _regionInfo.gameObject.SetActive(true);
+        _regionInfoName.text = regionName;
+        _regionInfoType.text = regionType;
+
     }
 
-    private void DeselectRegion()
+    public void DeselectRegion()
     {
         spriteRenderer.sprite = _normalTexture;
+        _regionInfo.gameObject.SetActive(false);
     }
 }
