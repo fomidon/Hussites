@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("a");
         saveManager = new ProgressSaveManager();
         if (saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
         {
@@ -25,11 +26,6 @@ public class GameManager : MonoBehaviour
         {
             InitializeGame();
         }
-        _farm._player = _player;
-        _city._player = _player;
-        _enemyProvince._player = _player;
-        _fightWindow._player = _player;
-        _fightWindow.movement = _playerMovement;
     }
 
     private void InitializeGame()
@@ -172,5 +168,19 @@ public class GameManager : MonoBehaviour
 
         //Номер и начало хода
         TurnManager.Instance.LoadFromSave(progressData);
+
+        SetPlayerInLocations();
+    }
+
+    public void SetPlayerInLocations()
+    {
+        if (_player != null)
+        {
+            _farm._player = _player;
+            _city._player = _player;
+            _enemyProvince._player = _player;
+            _fightWindow._player = _player;
+            _fightWindow.movement = _playerMovement;
+        }
     }
 }
