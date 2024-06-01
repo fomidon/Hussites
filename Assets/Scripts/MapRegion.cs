@@ -10,7 +10,7 @@ public class MapRegion : MonoBehaviour
     public string regionType;
 
     public Vector2 Position { get; private set; }
-
+    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

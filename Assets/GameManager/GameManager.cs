@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             case "farm":
                 _city.HideCity();
                 _enemyProvince.HideEnemyProvince();
-                _farm.ShowFarm();
+                _farm.ShowFarm(currentRegion);
                 break;
             case "city":
                 _farm.HideFarm();
