@@ -19,12 +19,13 @@ public class Click : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 GetRegionInfo();
-                _currentMapRegion.SelectRegion();
+                // _currentMapRegion.SelectRegion();
             }
             else if (Input.GetMouseButtonDown(1))
             {
                 GetRegionInfo();
                 _image.gameObject.SetActive(true);
+                _currentMapRegion.SelectRegion();
                 _canClick = false;
                 
             }
@@ -68,6 +69,7 @@ public class Click : MonoBehaviour
     public void ClickNo()
     {
         _image.gameObject.SetActive(false);
+        _currentMapRegion.DeselectRegion();
         _canClick = true;
     }
 }
