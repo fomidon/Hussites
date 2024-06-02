@@ -1,13 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class TutorialStep
-{
-    public string Instruction; // Текст инструкции
-    public Action StepAction; // Действие, которое выполняется на этом шаге
-    public Func<bool> CompletionCondition; // Условие завершения шага
-}
 
 public class Tutorial : MonoBehaviour
 {
