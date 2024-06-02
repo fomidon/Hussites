@@ -40,6 +40,34 @@ public class FightWindow : MonoBehaviour
                     possibleTrophy = BotArmies.StandartRevard;
                 }
                 break;
+            case "secondCrusade":
+                enemyArmy = BotArmies.SecondCrusadeArmy;
+                possibleTrophy = BotArmies.SecondCrusadeRevard;
+                break;
+            case "silesia":
+                enemyArmy = BotArmies.SilesianArmy;
+                possibleTrophy = BotArmies.SilesianRevard;
+                break;
+            case "saxonia":
+                enemyArmy = BotArmies.SaxonianArmy;
+                possibleTrophy = BotArmies.SaxonianRevard;
+                break;
+            case "thirdCrusade":
+                enemyArmy = BotArmies.ThirdCrusadeArmy;
+                possibleTrophy = BotArmies.ThirdCrusadeRevard;
+                break;
+            case "moderate":
+                enemyArmy = BotArmies.ModerateArmy;
+                possibleTrophy = BotArmies.ModerateRevard;
+                break;
+            case "tabor":
+                enemyArmy = BotArmies.TaborArmy;
+                possibleTrophy = BotArmies.TaborRevard;
+                break;
+            default:
+                enemyArmy = BotArmies.StandartEnemyArmy;
+                possibleTrophy = BotArmies.StandartRevard;
+                break;
         }
 
         List<IUniversalSoldier> playerArmy;
