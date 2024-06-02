@@ -1,13 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class TutorialStep
-{
-    public string Instruction; // Текст инструкции
-    public Action StepAction; // Действие, которое выполняется на этом шаге
-    public Func<bool> CompletionCondition; // Условие завершения шага
-}
 
 public class Tutorial : MonoBehaviour
 {
@@ -16,11 +8,11 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private List<MapRegion> regionsToVisit;
     [SerializeField] private FightWindow fightWindow;
-    private Queue<MapRegion> visitQueue;
+    private Queue<MapRegion> visitQueue = new();
 
     private int previousInfantryCount;
     private int previousRecruitsCount;
-    private int previousTurnsCount;
+    private int previousTurnsCount = 1;
 
     [SerializeField] private GameManager gameManager;
     private int currentStepIndex;
@@ -34,10 +26,9 @@ public class Tutorial : MonoBehaviour
     private void SetupTutorial()
     {
         foreach (var el in regionsToVisit)
-            visitQueue.Enqueue(el);
-        previousRecruitsCount = gameManager.player.army.RecruitsCount;
-        previousInfantryCount = gameManager.player.army.InfantryOutside.Count;
-        previousTurnsCount = TurnManager.Instance.TurnsCount;
+            visitQueue.Enqueue(el); 
+        //previousRecruitsCount = gameManager.player.army.RecruitsCount;
+        //previousInfantryCount = gameManager.player.army.InfantryOutside.Count;
 
         steps = new List<TutorialStep>
         {
@@ -87,7 +78,7 @@ public class Tutorial : MonoBehaviour
             new()
             {
                 Instruction = "На вас нападают! После боя обучение будет завершено.",
-                StepAction = () => Debug.Log("Вызвать FightWindow.ShowFightWindow"),
+                StepAction = () => fightWindow.ShowFightWindow(),
                 CompletionCondition = () => true
             }
         };
