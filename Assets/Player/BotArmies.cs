@@ -36,4 +36,10 @@ class BotArmies
     public static List<IUniversalSoldier> BigEnemyArmy { get => ArmyByRequirement(3, 1, 1); }
 
     public static int BigRevard { get => RevardByRequirement(3, 1, 1); }
+
+    public static List<IUniversalSoldier> TrainingArmy { get => ArmyByRequirement(1, 0, 0); }
+
+    public static int TrainingRevard { get => RevardByRequirement(1, 0, 0); }
+
+
 }
