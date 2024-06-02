@@ -16,12 +16,12 @@ public class Click : MonoBehaviour
     {
         if (_canClick)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                GetRegionInfo();
-                // _currentMapRegion.SelectRegion();
-            }
-            else if (Input.GetMouseButtonDown(1))
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     GetRegionInfo();
+            //     _currentMapRegion.SelectRegion();
+            // }
+            if (Input.GetMouseButtonDown(1))
             {
                 GetRegionInfo();
                 _image.gameObject.SetActive(true);

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Farm _farm;
     [SerializeField] private City _city;
+    [SerializeField] private Tabor _tabor;
     [SerializeField] private EnemyProvince _enemyProvince;
     [SerializeField] private FightWindow _fightWindow;
     public GameObject playerPrefab; // Префаб игрока
@@ -69,31 +70,32 @@ public class GameManager : MonoBehaviour
     {
         switch (currentRegion.regionType)
         {
-            case "farm":
-                this.currentRegion.DeselectRegion();
+            case "tabor":
                 _city.HideCity();
+                _farm.HideFarm();
                 _enemyProvince.HideEnemyProvince();
-                _farm.ShowFarm(currentRegion);
+                _tabor.ShowTabor();
                 break;
             case "city":
-                this.currentRegion.DeselectRegion();
                 _farm.HideFarm();
+                _tabor.HideTabor();
                 _enemyProvince.HideEnemyProvince();
                 _city.ShowCity(currentRegion);
                 break;
             case "enemy":
-                this.currentRegion.DeselectRegion();
                 _farm.HideFarm();
+                _tabor.HideTabor();
                 _city.HideCity();
                 _enemyProvince.HideEnemyProvince();
                 _fightWindow.ShowFightWindow();
                 break;
             default:
-                _farm.HideFarm();
                 _city.HideCity();
+                _tabor.HideTabor();
                 _enemyProvince.HideEnemyProvince();
-                Debug.LogWarning("Неизвестный тип региона");
+                _farm.ShowFarm(currentRegion);
                 break;
+                
         }
     }
 

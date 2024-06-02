@@ -7,10 +7,19 @@ public class City : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
     [SerializeField] public TMP_Text _regionName;
+    [SerializeField] private TMP_Text _recruitsAmount;
+    [SerializeField] private TMP_Text _infatryCost;
+    [SerializeField] private TMP_Text _cavarlyCost;
+    [SerializeField] private TMP_Text _rangedCost;
+    
 
     public void ShowCity(MapRegion _currentMapRegion)
     {
         _image.gameObject.SetActive(true);
+        _recruitsAmount.text = _player.army.RecruitsCount.ToString();
+        _infatryCost.text = ArmyCosts.InfantryCost.ToString();
+        _cavarlyCost.text = ArmyCosts.CavalryCost.ToString();
+        _rangedCost.text = ArmyCosts.CrossbowMenCost.ToString();
         _regionName.text = _currentMapRegion.regionName;
     }
 

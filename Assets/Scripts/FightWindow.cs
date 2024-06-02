@@ -60,14 +60,21 @@ public class FightWindow : MonoBehaviour
 
         if (battleResult)
         {
+            _fightResultsWindow.ShowFightResultsWindow(true);
             _player.ModifyGold(possibleTrophy);
         } else
         {
+            _fightResultsWindow.ShowFightResultsWindow(false);
             movement.EmergencyTeleport(_player);
         }
         _player.army.GetArmyFromBattle(playerArmy);
-        _fightResultsWindow.ShowFightResultsWindow();
         
+    }
+
+    public void ClickLeave()
+    {
+        HideFightWindow();
+        movement.EmergencyTeleport(_player);
     }
     
     public void HideFightWindow()

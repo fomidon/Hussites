@@ -4,6 +4,7 @@ using UnityEngine.Serialization;
 public class PlayerMovement : MonoBehaviour
 {
     public MapRegion initialRegion;
+    [SerializeField] private GameManager _gameManager;
     [FormerlySerializedAs("_currentPosition")] public MapRegion currentPosition;
     private MapRegion _lastFriendlyPosition;
     private const float TransitionMaxLength = 2;
@@ -59,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
             _lastFriendlyPosition = currentPosition;
         }
         player.position = currentPosition;
+        _gameManager.ShowRegion(currentPosition);
+        
     }
     
     // Телепорт в последнюю дружественную позицию
