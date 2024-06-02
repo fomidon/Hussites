@@ -36,7 +36,7 @@ public class TurnManager : MonoBehaviour
         StartTurn();
     }
 
-    public void StartTurn()
+    private void StartTurn()
     {
         BeginTurnToCompute = true;
         remainingMoves = moveLimit;
@@ -44,7 +44,7 @@ public class TurnManager : MonoBehaviour
     }
 
     public bool CanMove() => remainingMoves > 0;
-    public bool CanRecruit() => remainingRecruits > 0;
+    private bool CanRecruit() => remainingRecruits > 0;
 
     public void UseMove()
     {
@@ -75,9 +75,9 @@ public class TurnManager : MonoBehaviour
         CheatTurn();
     }
 
-    public void CheatTurn()
+    private void CheatTurn()
     {
-        if (Input.GetKeyDown(KeyCode.F1)) 
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             EndTurn();
         }

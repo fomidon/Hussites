@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
     public MapRegion initialRegion;
-    private MapRegion _currentPosition;
+    [FormerlySerializedAs("_currentPosition")] public MapRegion currentPosition;
     private MapRegion _lastFriendlyPosition;
     private const float TransitionMaxLength = 2;
 
     //Метод для установки начального местоположения
     public void SetFirstCurrentPosition()
     {
-        _currentPosition = initialRegion;
+        currentPosition = initialRegion;
     }
 
     // Метод для перемещения игрока в указанный регион
@@ -20,44 +21,44 @@ public class PlayerMovement : MonoBehaviour
         if (TryMovePosition(targetRegion))
         {
             TurnManager.Instance.UseMove();
-            player.position = _currentPosition;
+            player.position = currentPosition;
         }
         else
         {
             Debug.LogWarning("Невозможно переместиться в указанный регион.");
         }
 
-        return _currentPosition;
+        return currentPosition;
     }
 
     // Метод для попытки перемещения в другой регион
     public bool TryMovePosition(MapRegion region)
     {
         // Проверяем, допустимо ли перемещение на такое расстояние
-        if ((region.Position - _currentPosition.Position).magnitude > TransitionMaxLength)
+        if ((region.Position - currentPosition.Position).magnitude > TransitionMaxLength)
         {
             return false;
         }
         
         // Обновляем текущую позицию игрока
-        _currentPosition = region;
+        currentPosition = region;
 
         // Если регион - не вражеский, обновляем последнюю позицию дружественных войск
         if (region.regionType.ToLower() != "enemy")
         {
-            _lastFriendlyPosition = _currentPosition;
+            _lastFriendlyPosition = currentPosition;
         }
         return true;
     }
 
     public void Teleport(Player player, MapRegion region)
     {
-        _currentPosition = region;
+        currentPosition = region;
         if (region.regionType.ToLower() != "enemy")
         {
-            _lastFriendlyPosition = _currentPosition;
+            _lastFriendlyPosition = currentPosition;
         }
-        player.position = _currentPosition;
+        player.position = currentPosition;
     }
     
     // Телепорт в последнюю дружественную позицию

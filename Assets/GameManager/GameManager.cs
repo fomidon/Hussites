@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Farm _farm;
@@ -7,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnemyProvince _enemyProvince;
     [SerializeField] private FightWindow _fightWindow;
     public GameObject playerPrefab; // Префаб игрока
-    private Player _player; // Модель игрока
+    [FormerlySerializedAs("_player")] public Player player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
     public MapRegion currentRegion; // Текущий регион, в котором находится игрок
     public bool standartInterfaceBlock = false;
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         // Создание игрока из префаба
         playerObject = Instantiate(playerPrefab);
-        _player = playerObject.GetComponent<Player>();
+        player = playerObject.GetComponent<Player>();
 
         // Создание экземпляра контроллера перемещения
         _playerMovement = playerObject.GetComponent<PlayerMovement>();
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
-        _player.position = currentRegion;
+        player.position = currentRegion;
 
         // UpdateUI();
     }
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         if (TurnManager.Instance.CanMove())
         {
-            currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
+            currentRegion = _playerMovement.MoveToRegion(player, targetRegion);
             ShowRegion(currentRegion);
         }
         //UpdateUI();
@@ -115,7 +117,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.F5))
         {
-            saveManager.SaveProgress(SaveType.ManualSave, _player);
+            saveManager.SaveProgress(SaveType.ManualSave, player);
         }
 
         if (Input.GetKeyUp(KeyCode.F9))
@@ -129,16 +131,16 @@ public class GameManager : MonoBehaviour
 
     public void EndTurnCompute(int turn)
     {
-        if (_player.ArmyMaintenance())
+        if (player.ArmyMaintenance())
         {
-            currentRegion = _playerMovement.EmergencyTeleport(_player); 
+            currentRegion = _playerMovement.EmergencyTeleport(player); 
         }
     }
 
     public void BeginTurnCompute(int turn) 
     {
-        _player.army.GetArmyForBattle();
-        saveManager.BeginTurn(_player);
+        player.army.GetArmyForBattle();
+        saveManager.BeginTurn(player);
         try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
     }
 
@@ -150,14 +152,14 @@ public class GameManager : MonoBehaviour
     public void LoadFromSave(ProgressData progressData)
     {
         // Создание игрока из префаба
-        if (_player != null)
+        if (player != null)
         {
             Destroy(playerObject);
         }
 
         playerObject = Instantiate(playerPrefab);
-        _player = playerObject.GetComponent<Player>();
-        _player.InitializeFromSave(progressData);
+        player = playerObject.GetComponent<Player>();
+        player.InitializeFromSave(progressData);
 
         // Создание экземпляра контроллера перемещения
         _playerMovement = playerObject.GetComponent<PlayerMovement>();
@@ -167,7 +169,7 @@ public class GameManager : MonoBehaviour
 
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
-        _player.position = currentRegion;
+        player.position = currentRegion;
 
         //Номер и начало хода
         TurnManager.Instance.LoadFromSave(progressData);
@@ -177,12 +179,12 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayerInLocations()
     {
-        if (_player != null)
+        if (player != null)
         {
-            _farm._player = _player;
-            _city._player = _player;
-            _enemyProvince._player = _player;
-            _fightWindow._player = _player;
+            _farm._player = player;
+            _city._player = player;
+            _enemyProvince._player = player;
+            _fightWindow._player = player;
             _fightWindow.movement = _playerMovement;
         }
     }
