@@ -48,13 +48,6 @@ public class GameManager : MonoBehaviour
         // UpdateUI();
     }
 
-    // // Метод для обновления интерфейса (Контроллер интерфейса) 
-    // private void UpdateUI()
-    // {
-    //     UIManager.Instance.UpdateRegionInfo(currentRegion);
-    //     UIManager.Instance.UpdatePlayerResources(_player);
-    // }
-
     // Метод для перемещения игрока в указанный регион
     public void MovePlayerToRegion(MapRegion targetRegion)
     {
