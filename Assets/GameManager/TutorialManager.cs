@@ -92,7 +92,7 @@ public class Tutorial : MonoBehaviour
             {
                 Instruction = "На вас нападают! После боя обучение будет завершено.",
                 StepAction = () => fightWindow.ShowFightWindow(),
-                CompletionCondition = () => true
+                CompletionCondition = () => !fightWindow.isWindowActivate
             }
         };
     }
@@ -112,6 +112,7 @@ public class Tutorial : MonoBehaviour
         {
             isEnded = true;
             slides[^1].SetActive(false);
+            Destroy(this);
             // TODO: потушить окошко с инструкциями
             
         }
