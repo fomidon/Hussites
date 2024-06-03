@@ -10,6 +10,10 @@ public class StoryScript : MonoBehaviour
 {
     [SerializeField] private TMP_Text _storyText;
     [SerializeField] private GameObject _canvas;
+    [SerializeField] private MusicManager _musicManager;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    
     private string Text;
 
     string TextDiolog =
@@ -18,7 +22,11 @@ public class StoryScript : MonoBehaviour
     // Start is called before the first frame update
     public void ShowStory()
     {
+        _musicManager.Stop();
+        
         _canvas.SetActive(true);
+        audioSource.clip = audioClip;
+        audioSource.Play();
         StartCoroutine(TextAnimation());
         if (Console.ReadKey().Key == ConsoleKey.Backspace)
         {
@@ -47,8 +55,10 @@ public class StoryScript : MonoBehaviour
                 yield return new WaitForSeconds(0.035f);
         }
 
-        if (!isSkip) Thread.Sleep(5000);
+        if (!isSkip) Thread.Sleep(30000);
         HideStory();
+        audioSource.Stop();
+        _musicManager.Continue();
     }
 
     public void HideStory()

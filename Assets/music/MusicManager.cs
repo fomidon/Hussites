@@ -6,6 +6,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public AudioSource currentAudio;
+    [SerializeField] private GameObject _story;
 
     public readonly List<string> musicNames = new List<string>() { 
         "Dve_nevesti", "Зов крови", "Naranca", "GustaMiMagla", "Lazare" };
@@ -40,4 +41,10 @@ public class MusicManager : MonoBehaviour
         currentAudio = GameObject.Find(musicNames[musicCounter]).GetComponent<AudioSource>();
         currentAudio.Play();
     }
+
+    public void Stop() 
+        => currentAudio.Stop();
+
+    public void Continue()
+        => currentAudio.Play();
 }

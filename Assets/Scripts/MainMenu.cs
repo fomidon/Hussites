@@ -34,6 +34,7 @@ public class MainMenu : MonoBehaviour
         _tutorial.Restart();
         canvas.SetActive(false);
         
+        
     }
     
     public void SaveAndQuit()
