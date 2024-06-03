@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource currentAudio;
 
     public readonly List<string> musicNames = new List<string>() { 
-        "Dve_nevesti", "Зов крови", "Naranca", "GustaMiMagla", "Sargon" };
+        "Dve_nevesti", "Зов крови", "Naranca", "GustaMiMagla", "Lazare" };
     public int musicCounter = 0;
 
     // Start is called before the first frame update
