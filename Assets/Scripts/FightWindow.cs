@@ -20,8 +20,8 @@ public class FightWindow : MonoBehaviour
         _currentMapRegion = _player.position;
         this.type = type;
     }
-    
-    public (List<IUniversalSoldier>,  List<IUniversalSoldier>, int, bool) Battle()
+
+    private (List<IUniversalSoldier>,  List<IUniversalSoldier>, int, bool) Battle()
     {
         var enemyArmy = new List<IUniversalSoldier>();
         var possibleTrophy = 0;
@@ -86,19 +86,24 @@ public class FightWindow : MonoBehaviour
         var possibleTrophy = 0;
         var playerArmy = new List<IUniversalSoldier>();
         bool battleResult;
+        //var playerArmyBeforeBattle = GetArmyCountList();
+        var playerArmyBeforeBattle = _player.army.GetSoldiersNumbers();
         (playerArmy, enemyArmy, possibleTrophy, battleResult) = Battle();
-
+        //var playerArmyAfterBattle = GetArmyCountList();
+        var playerArmyAfterBattle = _player.army.GetSoldiersNumbers();
+        
+        
+        
         if (battleResult)
         {
-            _fightResultsWindow.ShowFightResultsWindow(true);
+            _fightResultsWindow.ShowFightResultsWindow(true, playerArmyBeforeBattle, playerArmyAfterBattle);
             _player.ModifyGold(possibleTrophy);
         } else
         {
-            _fightResultsWindow.ShowFightResultsWindow(false);
+            _fightResultsWindow.ShowFightResultsWindow(false, playerArmyBeforeBattle, playerArmyAfterBattle);
             movement.EmergencyTeleport(_player);
         }
         _player.army.GetArmyFromBattle(playerArmy);
-        
     }
 
     public void ClickLeave()
@@ -111,4 +116,13 @@ public class FightWindow : MonoBehaviour
     {
         _image.gameObject.SetActive(false);
     }
+    
+    private List<int> GetArmyCountList()
+    => new()
+    {
+        _player.army.RecruitsCount,
+        _player.army.InfantryOutside.Count,
+        _player.army.CavalryOutside.Count,
+        _player.army.RangedUnitsOutside.Count
+    };
 }

@@ -115,16 +115,33 @@ public class PlayerArmy
             unitTextMesh.text = (RecruitsCount * 250).ToString();
     }
 
-    private void UpdateUnitText<T>(List<T> Units, string unitType) where T : ISoldier
+    private void UpdateUnitText<T>(List<T> units, string unitType) where T : ISoldier
     {
         var unitTextMesh = GameObject.Find($"Text ({unitType})").GetComponent<TextMeshProUGUI>();
         if (unitTextMesh != null)
         {
-            var soldiersNumber = Units.Select(x => x.NumberOfPeople).Sum();
-            var soldiersMaxNumber = Units.Select(x => x.MaxPeopleNumber).Sum();
-            unitTextMesh.text = soldiersNumber.ToString() + "/" + soldiersMaxNumber.ToString();
+            var soldiersNumber = units.Select(x => x.NumberOfPeople).Sum();
+            var soldiersMaxNumber = units.Select(x => x.MaxPeopleNumber).Sum();
+            unitTextMesh.text = soldiersNumber + "/" + soldiersMaxNumber.ToString();
         }
     }
+
+    public List<(int, int)> GetSoldiersNumbers()
+    {
+        return new List<(int, int)>()
+        {
+            (RecruitsCount * 250, (RecruitsCount + MaxArmySize - armySize) * 250),
+            (GetNumber(_infantryUnits), GetMaxNumber(_infantryUnits)),
+            (GetNumber(_cavalryUnits), GetMaxNumber(_cavalryUnits)),
+            (GetNumber(_rangedUnits), GetMaxNumber(_rangedUnits)),
+        };
+    }
+    
+    private int GetNumber<T>(List<T> units) where T : ISoldier
+        => units.Select(x => x.NumberOfPeople).Sum();
+
+    private int GetMaxNumber<T>(List<T> units) where T : ISoldier
+        => units.Select(x => x.MaxPeopleNumber).Sum();
 
     public void GetDamageModifier(int valueInPersents)
     {
