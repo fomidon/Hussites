@@ -6465,7 +6465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &361453571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6964,7 +6964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &417677213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20111,7 +20111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "(70 \u2192 64 / 455)"
+  m_text: "(70 \u2192 64)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
   m_sharedMaterial: {fileID: 8750805254981269336, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
@@ -23940,7 +23940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6928eac7d8c47c542ac79aff8ce74e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTutorialNeed: 1
+  isTutorialNeed: 0
   tutorialWindow: {fileID: 72828078}
   instructionText: {fileID: 1008660662}
   regionsToVisit:
@@ -26722,6 +26722,11 @@ MonoBehaviour:
   _player: {fileID: 2058891474}
   _enemyProvince: {fileID: 92716302}
   _winOrNoText: {fileID: 937398974}
+  armyStatsTMP:
+  - {fileID: 1908023583}
+  - {fileID: 146230984}
+  - {fileID: 1473594117}
+  - {fileID: 332787510}
 --- !u!4 &1494858401
 Transform:
   m_ObjectHideFlags: 0
@@ -27278,7 +27283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "(15 \u2192 14 / 89)"
+  m_text: "(15 \u2192 14)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
   m_sharedMaterial: {fileID: 8750805254981269336, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
