@@ -1,9 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
-public class RandomEventWindow : MonoBehaviour
+public class PlotEventWindow : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
@@ -11,9 +12,6 @@ public class RandomEventWindow : MonoBehaviour
 
     [SerializeField] public TMP_Text eventText;
     [SerializeField] public TMP_Text eventName;
-    [SerializeField] public TMP_Text firstButtonText;
-    [SerializeField] public TMP_Text secondButtonText;
-    [SerializeField] public TMP_Text thirdButtonText;
 
     public Dictionary<RandomEventType, RandomEvent> events =
         new Dictionary<RandomEventType, RandomEvent> 
@@ -30,35 +28,11 @@ public class RandomEventWindow : MonoBehaviour
         _image.gameObject.SetActive(true);
     }
 
-    public void FirstButtonClick()
+    public void ClickOk()
     {
-        if (!currentEvent.canFirstButtonClick(_player)) 
-        {
-            return;
-        }
-        currentEvent.onFirstButtonClick(_player);
-        HideRandomEvent();
+        return;
     }
-
-    public void SecondButtonClick()
-    {
-        if (!currentEvent.canSecondButtonClick(_player))
-        {
-            return;
-        }
-        currentEvent.onSecondButtonClick(_player);
-        HideRandomEvent();
-    }
-
-    public void ThirdButtonClick()
-    {
-        if (!currentEvent.canThirdButtonClick(_player))
-        {
-            return;
-        }
-        currentEvent.onThirdButtonClick(_player);
-        HideRandomEvent();
-    }
+    
 
     public void HideRandomEvent()
     {
@@ -68,8 +42,6 @@ public class RandomEventWindow : MonoBehaviour
     public void Update()
     {
         eventText.text = currentEvent.text;
-        firstButtonText.text = currentEvent.firstButtonText;
-        secondButtonText.text = currentEvent.secondButtonText;
-        thirdButtonText.text = currentEvent.thirdButtonText;
+        eventName.text = "Plot event";
     }
 }

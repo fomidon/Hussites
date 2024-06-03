@@ -7,10 +7,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     public GameObject canvas;
     public ProgressSaveManager saveManager = new();
+    public StoryScript _story;
     
     public void OpenMenu()
     {
         canvas.SetActive(true);
+        _story.ShowStory();
        
     }
 
