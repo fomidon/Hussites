@@ -9,53 +9,75 @@ public class City : MonoBehaviour
     [SerializeField] public TMP_Text _regionName;
     [SerializeField] private TMP_Text _recruitsAmount;
     [SerializeField] private TMP_Text _infatryCost;
-    [SerializeField] private TMP_Text _cavarlyCost;
+    [SerializeField] private TMP_Text _cavalryCost;
     [SerializeField] private TMP_Text _rangedCost;
-    
+    [SerializeField] private int _infantryMoney;
+    [SerializeField] private int _cavalryMoney;
+    [SerializeField] private int _rangedMoney;
+    [SerializeField] private (int, int) pietyCoeff;
 
     public void ShowCity(MapRegion _currentMapRegion)
     {
         _image.gameObject.SetActive(true);
-        _recruitsAmount.text = _player.army.RecruitsCount.ToString();
-        _infatryCost.text = ArmyCosts.InfantryCost.ToString();
-        _cavarlyCost.text = ArmyCosts.CavalryCost.ToString();
-        _rangedCost.text = ArmyCosts.CrossbowMenCost.ToString();
-        _regionName.text = _currentMapRegion.regionName;
+        if (_player.Piety <= 50)
+        {
+            pietyCoeff = (1, 1);
+        } else if (_player.Piety <= 80)
+        {
+            pietyCoeff = (5, 4);
+        } else
+        {
+            pietyCoeff = (3, 2);
+        }
+
+        _infantryMoney = ArmyCosts.InfantryCost * pietyCoeff.Item1 / pietyCoeff.Item2;
+        _cavalryMoney = ArmyCosts.CavalryCost * pietyCoeff.Item1 / pietyCoeff.Item2;
+        _rangedMoney = ArmyCosts.CrossbowMenCost * pietyCoeff.Item1 / pietyCoeff.Item2;
+        UpdateUI(_currentMapRegion);
     }
 
     public void ClickTrainInfantry()
     {
-        if (_player.Gold < 8000 || !_player.army.CanTrainRecruits())
+        if (_player.Gold < _infantryMoney || !_player.army.CanTrainRecruits())
         {
             return;
         }
-        _player.ModifyGold(-ArmyCosts.InfantryCost);
+        _player.ModifyGold(-_infantryMoney);
         _player.army.TrainRecruit("Пехота");
         //Debug.Log(_player.army.infantryOutside.Count);
     }
 
     public void ClickTrainCavarly()
     {
-        if (_player.Gold < 16000 || !_player.army.CanTrainRecruits())
+        if (_player.Gold < _cavalryMoney || !_player.army.CanTrainRecruits())
         {
             return;
         }
-        _player.ModifyGold(-ArmyCosts.CavalryCost);
+        _player.ModifyGold(-_cavalryMoney);
         _player.army.TrainRecruit("Кавалерия");
         Debug.Log(_player.army.CavalryOutside.Count);
     }
-    
+
     public void ClickTrainRanged()
     {
-        if (_player.Gold < 16000 || !_player.army.CanTrainRecruits())
+        if (_player.Gold < _rangedMoney || !_player.army.CanTrainRecruits())
         {
             return;
         }
-        _player.ModifyGold(-ArmyCosts.CrossbowMenCost);
+        _player.ModifyGold(-_rangedMoney);
         _player.army.TrainRecruit("Дальний бой");
         Debug.Log(_player.army.RangedUnitsOutside.Count);
     }
-    
+
+    public void UpdateUI(MapRegion _currentMapRegion)
+    {
+        _recruitsAmount.text = _player.army.RecruitsCount.ToString();
+        _infatryCost.text = _infantryMoney.ToString();
+        _cavalryCost.text = _cavalryMoney.ToString();
+        _rangedCost.text = _rangedMoney.ToString();
+        _regionName.text = _currentMapRegion.regionName;
+    }
+
     public void HideCity()
     {
         _image.gameObject.SetActive(false);

@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
         }
 
         UpdateUI();
+        army.SetPietyModifier(Piety);
     }
 
     public bool ArmyMaintenance()
