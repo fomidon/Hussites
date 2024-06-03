@@ -8,7 +8,9 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private List<MapRegion> regionsToVisit;
     [SerializeField] private FightWindow fightWindow;
+    [SerializeField] private List<GameObject> slides;
     private Queue<MapRegion> visitQueue = new();
+    
 
     private int previousInfantryCount;
     private int previousRecruitsCount;
@@ -36,14 +38,17 @@ public class Tutorial : MonoBehaviour
             new()
             {
                 Instruction = "Переместитесь на соседнюю провинцию",
-                StepAction = () => Debug.Log("фокус и стрелка на регион"),
+                StepAction = () => Debug.Log(""),
                 CompletionCondition = PlayerMovedToNextRegion
             },
             // Второй шаг: Нанять новобранцев
             new()
             {
                 Instruction = "Наймите своих первых новобранцев",
-                StepAction = () => Debug.Log("стрелка на новобранцев"),
+                StepAction = () =>
+                {
+                    Debug.Log("стрелка на новобранцев");
+                },
                 CompletionCondition = PlayerHiredRecruits
             },
             // Третий шаг: Сдать ход
@@ -74,7 +79,15 @@ public class Tutorial : MonoBehaviour
                 StepAction = () => Debug.Log("\"зажечь\" стрелочку на кнопку сдать ход"),
                 CompletionCondition = PlayerEndedTurn
             },
-            // Седьмой шаг: Внезапное нападение
+            // Седьмой шаг: выйти из города
+            new()
+            {
+                Instruction = "Переместитесь на соседнюю провинцию",
+                StepAction = () => Debug.Log(""),
+                CompletionCondition = PlayerMovedToNextRegion
+            },
+            
+            // Восьмой шаг: Внезапное нападение
             new()
             {
                 Instruction = "На вас нападают! После боя обучение будет завершено.",
@@ -92,12 +105,15 @@ public class Tutorial : MonoBehaviour
             DisplayInstruction(steps[currentStepIndex].Instruction);
 
             // Выполнить действие текущего шага
+            ActivateNextSlide();
             steps[currentStepIndex].StepAction?.Invoke();
         }
         else
         {
             isEnded = true;
+            slides[^1].SetActive(false);
             // TODO: потушить окошко с инструкциями
+            
         }
     }
 
@@ -109,6 +125,13 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+    private void ActivateNextSlide()
+    {
+        if (currentStepIndex > 0) 
+            slides[currentStepIndex - 1].SetActive(false);
+        slides[currentStepIndex].SetActive(true);
+    }
+    
     private void NextStep()
     {
         currentStepIndex++;
