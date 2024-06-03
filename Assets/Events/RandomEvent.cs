@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class RandomEvent: MonoBehaviour
+public class RandomEvent
 {
     public string text;
 
