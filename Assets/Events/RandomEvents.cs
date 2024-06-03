@@ -81,4 +81,22 @@ public class RandomEvents
             pl.army.TrainRecruit("Дальний бой");
         }
     };
+
+    public static RandomEventType GetRandomEvent()
+    {
+        var generator = new System.Random();
+        var number = generator.Next(1, 5);
+        switch (number)
+        {
+            case 1:
+                return RandomEventType.HussitPreacher;
+            case 2:
+                return RandomEventType.TaborDemands;
+            case 3:
+                return RandomEventType.SplitUp;
+            case 4:
+                return RandomEventType.TaborHelps;
+        }
+        return RandomEventType.HussitPreacher;
+    }
 }

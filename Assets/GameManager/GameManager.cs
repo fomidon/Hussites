@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Tabor _tabor;
     [SerializeField] private EnemyProvince _enemyProvince;
     [SerializeField] private FightWindow _fightWindow;
+    [SerializeField] private RandomEventWindow eventWindow;
     public GameObject playerPrefab; // Префаб игрока
     [FormerlySerializedAs("_player")] public Player player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
@@ -142,7 +144,12 @@ public class GameManager : MonoBehaviour
     public void TurnEvents(int turn)
     {
         MapRegion battlePlace;
-       switch (turn)
+        
+        if (turn <= 3)
+        {
+            return;
+        }
+        switch (turn)
         {
             case 9:
                 battlePlace = GameObject.Find("region22").GetComponent<MapRegion>();
@@ -174,6 +181,9 @@ public class GameManager : MonoBehaviour
                 {
                     _fightWindow.ShowFightWindow("tabor");
                 }
+                break;
+            default:
+                eventWindow.ShowEventWindow(RandomEvents.GetRandomEvent());
                 break;
         }
     }
@@ -215,6 +225,7 @@ public class GameManager : MonoBehaviour
             _enemyProvince._player = player;
             _fightWindow._player = player;
             _fightWindow.movement = _playerMovement;
+            eventWindow._player = player;
         }
     }
 }

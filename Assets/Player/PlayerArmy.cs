@@ -23,6 +23,8 @@ public class PlayerArmy
 
     public double DamageResistanceModifier { get; set; } = 1;
 
+    public double DamagePietyModifier { get; set; } = 1;
+
     public int armySize
     {
         get => RecruitsCount + _infantryUnits.Count +
@@ -134,15 +136,29 @@ public class PlayerArmy
         DamageResistanceModifier *= 1 - valueInPersents / 100d;
     }
 
+    public void SetPietyModifier(int Piety)
+    {
+        if (Piety <= 50)
+        {
+            DamagePietyModifier = 1;
+        } else if (Piety <= 80)
+        {
+            DamagePietyModifier = 1.15;
+        } else
+        {
+            DamagePietyModifier = 1.25;
+        }
+    }
+
     public IUniversalSoldier PrepareUnit(DistantSoldier unit)
     {
-        unit.SetModificators(DamageModifier, DamageResistanceModifier);
+        unit.SetModificators(DamageModifier * DamagePietyModifier, DamageResistanceModifier);
         return new UniversalSoldier(unit);
     }
 
     public IUniversalSoldier PrepareUnit(MeleeSoldier unit)
     {
-        unit.SetModificators(DamageModifier, DamageResistanceModifier);
+        unit.SetModificators(DamageModifier * DamagePietyModifier, DamageResistanceModifier);
         return new UniversalSoldier(unit);
     }
 
