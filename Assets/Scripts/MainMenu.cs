@@ -5,13 +5,15 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
+
+    [SerializeField] private Tutorial _tutorial;
     public GameObject canvas;
-    public ProgressSaveManager saveManager = new();
+    public readonly ProgressSaveManager SaveManager = new();
+    
     
     public void OpenMenu()
     {
         canvas.SetActive(true);
-       
     }
 
     public void Continue()
@@ -23,8 +25,9 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     public void StartNewGame()
     {
-        saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData);
+        SaveManager.TryReadFromSave(SaveType.BasicSave, out var baseData);
         _gameManager.LoadFromSave(baseData);
+        _tutorial.Restart();
         canvas.SetActive(false);
         
     }
