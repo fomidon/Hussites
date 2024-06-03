@@ -18,7 +18,6 @@ public class Tabor : MonoBehaviour
     
     public void ClickLessDamage()
     {
-        _player.ModifyGold(40000);
         if (_player.Gold < 15000 || !flagLessDamage)
             return;
         _player.army.GetDamageResistanceModifier(40);
@@ -27,7 +26,6 @@ public class Tabor : MonoBehaviour
     }
     public void ClickMoreDamage()
     {
-        _player.ModifyGold(40000);
         if (_player.Gold < 40000 || !flagMoreDamage)
         {
             Debug.Log("good thing");

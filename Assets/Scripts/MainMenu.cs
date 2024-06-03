@@ -34,10 +34,12 @@ public class MainMenu : MonoBehaviour
         _tutorial.Restart();
         canvas.SetActive(false);
         
+        
     }
     
     public void SaveAndQuit()
     {
+        SaveManager.SaveProgress(SaveType.ManualSave, _gameManager.player);
         Application.Quit();
     }
 }
