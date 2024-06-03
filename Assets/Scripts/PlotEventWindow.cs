@@ -8,29 +8,22 @@ public class PlotEventWindow : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
-    [SerializeField] public RandomEvent currentEvent = RandomEvents.HussitPreacher;
+    [SerializeField] public PlotEvent currentEvent = PlotEvent.BremenMusitians;
 
     [SerializeField] public TMP_Text eventText;
     [SerializeField] public TMP_Text eventName;
 
-    public Dictionary<RandomEventType, RandomEvent> events =
-        new Dictionary<RandomEventType, RandomEvent> 
-        {
-            { RandomEventType.HussitPreacher, RandomEvents.HussitPreacher },
-            { RandomEventType.TaborHelps, RandomEvents.TaborHelps },
-            { RandomEventType.TaborDemands, RandomEvents.TaborDemands },
-            { RandomEventType.SplitUp, RandomEvents.SplitUp },
-        };
-
-    public void ShowEventWindow(RandomEventType type = RandomEventType.HussitPreacher)
+    public void ShowEventWindow(PlotEvent plotEvent)
     {
-        currentEvent = events[type];
+        currentEvent = plotEvent;
         _image.gameObject.SetActive(true);
+        eventName.text = currentEvent.name;
+        eventText.text = currentEvent.text;
     }
 
     public void ClickOk()
     {
-        return;
+        HideRandomEvent();
     }
     
 
@@ -42,6 +35,6 @@ public class PlotEventWindow : MonoBehaviour
     public void Update()
     {
         eventText.text = currentEvent.text;
-        eventName.text = "Plot event";
+        eventName.text = currentEvent.name;
     }
 }

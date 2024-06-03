@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnemyProvince _enemyProvince;
     [SerializeField] private FightWindow _fightWindow;
     [SerializeField] private RandomEventWindow eventWindow;
+    [SerializeField] private PlotEventWindow plotEventWindow;
     public GameObject playerPrefab; // Префаб игрока
     [FormerlySerializedAs("_player")] public Player player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour
     {
         player.army.GetArmyForBattle();
         saveManager.BeginTurn(player);
+        TurnEvents(turn);
         try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
     }
 
@@ -166,7 +168,7 @@ public class GameManager : MonoBehaviour
                 _playerMovement.Teleport(player, battlePlace);
                 _fightWindow.ShowFightWindow("saxonia");
                 break;
-            case 25:
+            case 27:
                 battlePlace = GameObject.Find("region9").GetComponent<MapRegion>();
                 _playerMovement.Teleport(player, battlePlace);
                 _fightWindow.ShowFightWindow("thirdCrusade");
@@ -181,6 +183,21 @@ public class GameManager : MonoBehaviour
                 {
                     _fightWindow.ShowFightWindow("tabor");
                 }
+                break;
+            case 5:
+                plotEventWindow.ShowEventWindow(PlotEvent.BremenMusitians);
+                break;
+            case 10:
+                plotEventWindow.ShowEventWindow(PlotEvent.Gutenberg);
+                break;
+            case 13:
+                plotEventWindow.ShowEventWindow(PlotEvent.Witcher);
+                break;
+            case 20:
+                plotEventWindow.ShowEventWindow(PlotEvent.Copernicus);
+                break;
+            case 25:
+                plotEventWindow.ShowEventWindow(PlotEvent.Kuplinov);
                 break;
             default:
                 eventWindow.ShowEventWindow(RandomEvents.GetRandomEvent());
@@ -225,7 +242,7 @@ public class GameManager : MonoBehaviour
             _enemyProvince._player = player;
             _fightWindow._player = player;
             _fightWindow.movement = _playerMovement;
-            //eventWindow._player = player;
+            eventWindow._player = player;
         }
     }
 }
