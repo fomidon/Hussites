@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="822f8efa-e564-40a5-a42a-ea6648bb0647" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/TutorialManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant_Unicase/CormorantUnicase-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant_Unicase/CormorantUnicase-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "1",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,7 +51,7 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Билд/MonoBleedingEdge\Hussites.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Билд/MonoBleedingEdge/Hussites.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\My\C#\Билд\MonoBleedingEdge" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -102,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716488485687</updated>
       <workItem from="1716488488971" duration="6562000" />
-      <workItem from="1717425450383" duration="655000" />
+      <workItem from="1717425450383" duration="1716000" />
     </task>
     <servers />
   </component>
