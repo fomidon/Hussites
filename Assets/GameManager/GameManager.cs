@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour
             _enemyProvince._player = player;
             _fightWindow._player = player;
             _fightWindow.movement = _playerMovement;
-            eventWindow._player = player;
+            //eventWindow._player = player;
         }
     }
 }
