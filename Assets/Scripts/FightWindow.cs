@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class FightWindow : MonoBehaviour
@@ -11,6 +12,7 @@ public class FightWindow : MonoBehaviour
     [SerializeField] private int counter = 0;
     [SerializeField] private string type = "";
     public PlayerMovement movement;
+    public bool isWindowActivate => _image.IsActive();
 
     public void ShowFightWindow(string type = "standart")
     {
@@ -18,7 +20,7 @@ public class FightWindow : MonoBehaviour
         _currentMapRegion = _player.position;
         this.type = type;
     }
-
+    
     public (List<IUniversalSoldier>,  List<IUniversalSoldier>, int, bool) Battle()
     {
         var enemyArmy = new List<IUniversalSoldier>();

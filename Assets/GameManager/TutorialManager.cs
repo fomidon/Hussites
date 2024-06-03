@@ -5,6 +5,7 @@ public class Tutorial : MonoBehaviour
 {
     private List<TutorialStep> steps;
     private bool isEnded;
+    public bool isTutorialNeed = true;
 
     [SerializeField] private List<MapRegion> regionsToVisit;
     [SerializeField] private FightWindow fightWindow;
@@ -37,7 +38,7 @@ public class Tutorial : MonoBehaviour
             // Первый шаг: Переместиться на первый указанный регион
             new()
             {
-                Instruction = "Переместитесь на соседнюю провинцию",
+                Instruction = "Добро пожаловать, командир! Несомненно, вам уготована великая судьба, однако сперва давайте познакомимся с основными механиками игры. Для начала переместитесь в соседнюю провинцию, кликнув на нее.",
                 StepAction = () => Debug.Log(""),
                 CompletionCondition = PlayerMovedToNextRegion
             },
@@ -92,14 +93,14 @@ public class Tutorial : MonoBehaviour
             {
                 Instruction = "На вас нападают! После боя обучение будет завершено.",
                 StepAction = () => fightWindow.ShowFightWindow(),
-                CompletionCondition = () => true
+                CompletionCondition = () => !fightWindow.isWindowActivate
             }
         };
     }
 
     private void ShowCurrentStep()
     {
-        if (currentStepIndex < steps.Count)
+        if (isTutorialNeed && currentStepIndex < steps.Count)
         {
             // Показать инструкцию текущего шага
             DisplayInstruction(steps[currentStepIndex].Instruction);
@@ -112,6 +113,7 @@ public class Tutorial : MonoBehaviour
         {
             isEnded = true;
             slides[^1].SetActive(false);
+            Destroy(this);
             // TODO: потушить окошко с инструкциями
             
         }
