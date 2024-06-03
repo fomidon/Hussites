@@ -54,5 +54,6 @@ public class StoryScript : MonoBehaviour
     public void HideStory()
     {
         _canvas.SetActive(false);
+        _storyText.text = "";
     }
 }
