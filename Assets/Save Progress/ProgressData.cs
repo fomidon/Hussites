@@ -17,6 +17,8 @@ public class ProgressData
     public double DamageResistanceModifier { get; set; }
 
     public int Turn { get; set; }
+    public bool IsTutorialEnd { get; set; }
+    
 
     public ProgressData()
     {
