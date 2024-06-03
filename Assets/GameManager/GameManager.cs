@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     public void TurnEvents(int turn)
     {
         MapRegion battlePlace;
-        
+
         if (turn <= 3)
         {
             return;
@@ -243,6 +243,7 @@ public class GameManager : MonoBehaviour
             _fightWindow._player = player;
             _fightWindow.movement = _playerMovement;
             eventWindow._player = player;
+            _tabor._player = player;
         }
     }
 }

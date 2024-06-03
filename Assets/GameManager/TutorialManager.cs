@@ -33,7 +33,10 @@ public class Tutorial : MonoBehaviour
 
     public void Restart()
     {
-        slides[currentStepIndex].SetActive(false);
+        foreach(var slide in slides)
+        {
+            slide.SetActive(false);
+        }
         tutorialWindow.gameObject.SetActive(false);
         
         previousRecruitsCount = 0;
