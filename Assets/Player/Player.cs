@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
             transform.position = position.Position;
         }
 
+        army.ModifyPiety(Piety);
         UpdateUI();
     }
 
