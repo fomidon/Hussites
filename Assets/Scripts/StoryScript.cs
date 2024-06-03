@@ -25,11 +25,6 @@ public class StoryScript : MonoBehaviour
             StopAllCoroutines();
             _storyText.text = TextDiolog;
         }
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     StopAllCoroutines();
-        //     _storyText.text = TextDiolog;
-        // }
     }
 
 

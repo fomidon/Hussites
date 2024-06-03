@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     public void OpenMenu()
     {
         canvas.SetActive(true);
-        _story.ShowStory();
+        //_story.ShowStory();
        
     }
 
@@ -29,6 +29,7 @@ public class MainMenu : MonoBehaviour
     public void StartNewGame()
     {
         SaveManager.TryReadFromSave(SaveType.BasicSave, out var baseData);
+        _story.ShowStory();
         _gameManager.LoadFromSave(baseData);
         _tutorial.Restart();
         canvas.SetActive(false);
