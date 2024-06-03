@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public void OpenMenu()
     {
         canvas.SetActive(true);
-        _story.ShowStory();
+        // _story.ShowStory();
        
     }
 
