@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: da1a5e16498bcb74b805a3d1372606a8, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &23459785
 SpriteRenderer:
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1aacd1dce23c1fd4591ca3fad625d72e, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &26871503
 SpriteRenderer:
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d620335c4f0fe28499238cd54c0aaba7, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &27046270
 SpriteRenderer:
@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5346ec1bdc3329f4a8e1c4225ba43d5c, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &36366556
 SpriteRenderer:
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1a637c50fd465794486b443b44e47bd0, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &112809413
 SpriteRenderer:
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: dcf2174a4d1ca8d429864c65f1658567, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &113747062
 SpriteRenderer:
@@ -1952,7 +1952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8c5a6fe1e443c3a4bb2dd615bb1eb5ff, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &138781748
 SpriteRenderer:
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 71434da211cde6247a1b12d0c372f51b, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &143643716
 SpriteRenderer:
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 12a779cc553e1d0498acd4e8532b19a0, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &149097417
 SpriteRenderer:
@@ -2533,7 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ce3bfbd83b41f164db6226eee884d4fc, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &152400974
 SpriteRenderer:
@@ -2698,7 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 19499dba37ddc43379f3624c379bab4e, type: 3}
-  regionName: "\u041E\u043B\u043E\u043C\u043E\u0443\u0446"
+  regionName: "\u0411\u0440\u043D\u043E"
   regionType: city
 --- !u!212 &156276759
 SpriteRenderer:
@@ -2879,7 +2879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: fbfb9fce233aae1458f5b6c7200c140e, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &165793332
 SpriteRenderer:
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 6bf4412960212da479d6099fd68e4f3a, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!60 &180782598
 PolygonCollider2D:
@@ -3267,7 +3267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a4c12e08a3c7a414d921a43d22b169f0, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &209217117
 SpriteRenderer:
@@ -3500,7 +3500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a1c523c5647ee35459502501f1bb5009, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &242500037
 SpriteRenderer:
@@ -3671,7 +3671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: da869eb4d9301c5419bb1e17fdc71a83, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &246692935
 PolygonCollider2D:
@@ -3901,7 +3901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 0441327d945b7e94fb9227fe8f72c497, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &247755615
 SpriteRenderer:
@@ -4033,7 +4033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 33cdc3e1730b62742972547766a40d3c, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &261429525
 PolygonCollider2D:
@@ -4292,7 +4292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: fe5b4fcbd0a43fc418b2d1a1bffc1e97, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &266803397
 SpriteRenderer:
@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 85611ef3074166a4e906b75f49132330, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &311031520
 SpriteRenderer:
@@ -5017,7 +5017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ce3bfbd83b41f164db6226eee884d4fc, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &344586689
 SpriteRenderer:
@@ -5549,7 +5549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 015e8fac6143e154fba263d9c86e3515, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &383557102
 SpriteRenderer:
@@ -5786,7 +5786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ef58334d872b2614b9c0e31a9ce2fd7f, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &416953018
 GameObject:
@@ -6327,7 +6327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8749db113cd60014fa8c00e9c6c2c66f, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &441466337
 SpriteRenderer:
@@ -6495,7 +6495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 3cd41ff676ff2f64cae9d121b4ba3d85, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &464865851
 SpriteRenderer:
@@ -6676,7 +6676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: e7cc9767a6d40e648906b575260cab29, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &477856995
 SpriteRenderer:
@@ -6860,7 +6860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: af294675f4bbec64a9c9031211ecf8ca, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &480511095
 SpriteRenderer:
@@ -7093,7 +7093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: e72278e39fff7f04cba569ee9469f570, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!60 &491900550
 PolygonCollider2D:
@@ -7476,7 +7476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: faa5eeb494607cc49a42f07eec3fe76f, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &530474119
 SpriteRenderer:
@@ -7562,7 +7562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 198e85d9812ae7a45a83b945fa720010, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &536037724
 SpriteRenderer:
@@ -7821,7 +7821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2c06e54bc8a8e334a9b8ae26e5898d17, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &541027319
 SpriteRenderer:
@@ -8342,7 +8342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 119c85ea4073c044db782b93ff55cf07, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &576283613
 SpriteRenderer:
@@ -8638,7 +8638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: c5ba3997ed3709340abd2db6c2fd8f30, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &589109118
 SpriteRenderer:
@@ -8831,7 +8831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 74449552f73d9934f9e4d4ac47d03434, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &596786982
 SpriteRenderer:
@@ -9060,7 +9060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 7b364075b259b404b99bcfa4017154b6, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &597372233
 PolygonCollider2D:
@@ -9254,7 +9254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 6326e60d571d04a4996f76a01152aba2, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &599521222
 SpriteRenderer:
@@ -9415,7 +9415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2f0d46aa9726ebd4cbb8962ab749774d, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &631939246
 SpriteRenderer:
@@ -9829,7 +9829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: b08a0c46aed50c64e82b8e9050d12001, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &648004915
 SpriteRenderer:
@@ -9986,7 +9986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: eaf757eead6c0c149afc1420dd93307a, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &664025916
 SpriteRenderer:
@@ -10154,7 +10154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 44aada5742f737744a245155220e5630, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &683585729
 SpriteRenderer:
@@ -10451,7 +10451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: e19ef878a71f149d0958fa6637715bc2, type: 3}
-  regionName: Tabor
+  regionName: "\u0422\u0430\u0431\u043E\u0440"
   regionType: tabor
 --- !u!212 &690969580
 SpriteRenderer:
@@ -10641,7 +10641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 4faccdb17bf648f4590e907a05f535fe, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &691783680
 SpriteRenderer:
@@ -10815,7 +10815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d8f92e8db05a4274bae8ce8fa11ea894, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &697248118
 SpriteRenderer:
@@ -10996,7 +10996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ff90dfddbb4d1f849ad47bf296cf7f32, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &700223049
 SpriteRenderer:
@@ -11162,7 +11162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 50c989ac974e43345b7d23ee1ed65d5e, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &702272153
 SpriteRenderer:
@@ -11342,7 +11342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 939554a673ec3f14eb43673c00a974c0, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &709501254
 SpriteRenderer:
@@ -11648,7 +11648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: f9d1f142b0be0894a9ba48eb7b5ad073, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &728604775
 SpriteRenderer:
@@ -11807,7 +11807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 38d3c24e9e2c9034a80a92ab57fac43e, type: 3}
-  regionName: oppp
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &731562388
 SpriteRenderer:
@@ -12195,7 +12195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a56c86ef9ab468744bd419a274c14c5a, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &791160693
 SpriteRenderer:
@@ -12281,7 +12281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 3e9ba13daa47fd542afcd0fa76577de4, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &812098065
 SpriteRenderer:
@@ -12519,7 +12519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 91c16af676e60f246a70525c7246b8f4, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &819603705
 SpriteRenderer:
@@ -12711,7 +12711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5267851b8eaca454eb22545e07ac2285, type: 3}
-  regionName: 
+  regionName: "\u041B\u0438\u0442\u0432\u0430"
   regionType: enemy
 --- !u!212 &824694307
 SpriteRenderer:
@@ -13106,7 +13106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 90442f907cba7fb43bf06567e6b03f6e, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &846412278
 GameObject:
@@ -13380,7 +13380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2d9e1cef583961c4f85a02034066096f, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &866061493
 SpriteRenderer:
@@ -13548,7 +13548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a21a45c115f80cf4e9895cdcf980a377, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &869859374
 SpriteRenderer:
@@ -13715,7 +13715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: b5a17b730343b7243a527a05d310756d, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &884759080
 SpriteRenderer:
@@ -13887,7 +13887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 73a73f045a6dbdf448f779beffd77258, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &894552114
 SpriteRenderer:
@@ -14061,7 +14061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 49cd74ae24911b64983c769e94fbbd02, type: 3}
-  regionName: 
+  regionName: "\u0421\u0430\u043A\u0441\u043E\u043D\u0438\u044F"
   regionType: enemy
 --- !u!212 &908256182
 SpriteRenderer:
@@ -14259,7 +14259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 0c41b960a55acea43b2110ab4d366788, type: 3}
-  regionName: 
+  regionName: "\u041B\u0438\u0442\u0432\u0430"
   regionType: enemy
 --- !u!212 &912568183
 SpriteRenderer:
@@ -14570,7 +14570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a7d9d389733ffb5419e6fc4b8a6b6cd0, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &915923390
 SpriteRenderer:
@@ -14758,7 +14758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d0794ed0a17a80743a91ae35be09520f, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &923125933
 SpriteRenderer:
@@ -15203,7 +15203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a0247083b7277184796d59fae4786dc4, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &961109297
 SpriteRenderer:
@@ -15505,7 +15505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: fc9bee76e43233d44b4cc3cb24c7c724, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1018742945
 SpriteRenderer:
@@ -15662,7 +15662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d4a5c75368dc1db4eb5c3ad4b93e3ff4, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1020129263
 SpriteRenderer:
@@ -15908,7 +15908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2b3961e11e6bd3c47870a4af65cd017b, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1061098973
 GameObject:
@@ -16019,7 +16019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: cb6a73bbd0b4b044cba70f67d671e236, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1061098977
 SpriteRenderer:
@@ -16185,7 +16185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2cd79a0b5630a6c46b7f8e373713e407, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1065627802
 SpriteRenderer:
@@ -16349,7 +16349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: c484ec8f73f47ff49b96db9665913fff, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1068041109
 SpriteRenderer:
@@ -16509,7 +16509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 6390a4f834058f547a73d0b87b5ab6a8, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1088759395
 SpriteRenderer:
@@ -16746,7 +16746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d171e830a48eeac42b3bb9ef2b675a31, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1095744933
 GameObject:
@@ -16953,7 +16953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 103fc836baed2de4f9237f26a3fda076, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1105263595
 SpriteRenderer:
@@ -17177,7 +17177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 4b5da3bd80d392b408feb176b188716c, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1141888211
 GameObject:
@@ -17299,7 +17299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 60275bd3a05bbb24a8f558e508116774, type: 3}
-  regionName: 
+  regionName: "\u041B\u0438\u0442\u0432\u0430"
   regionType: enemy
 --- !u!212 &1141888215
 SpriteRenderer:
@@ -17515,7 +17515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1b638cac360740e45b127ccc3a746625, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!1 &1181008421
 GameObject:
@@ -17630,7 +17630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1e829f43a2a5b824eadc270879e6599d, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1181008425
 SpriteRenderer:
@@ -17802,7 +17802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: c1fb5d7dbcccf63418f64b6721bb1e34, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1189530766
 SpriteRenderer:
@@ -17888,7 +17888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 660a1f00dc3222b439d550177be26225, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1192742174
 SpriteRenderer:
@@ -18197,7 +18197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 3a18c7c53403b524a980a944fa3ee3d3, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1207448163
 SpriteRenderer:
@@ -18569,7 +18569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 53c2a1385c117894488ac99c11987454, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1229396774
 SpriteRenderer:
@@ -18744,7 +18744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 143256976d7085745b5f6e1670d1eff3, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1237677848
 SpriteRenderer:
@@ -18944,7 +18944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1d5ca2fe42d88284dbf2ca7c6b783be9, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1245910604
 SpriteRenderer:
@@ -19185,7 +19185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 28fd0c771f6d89c43843ba6f30073033, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!1 &1260751394
 GameObject:
@@ -19321,7 +19321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8ce21b1e0f5b902468c905ea6bf78331, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1260751398
 SpriteRenderer:
@@ -19527,7 +19527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: deabb13457117bd4387d8c992cb56d3e, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1261253727
 SpriteRenderer:
@@ -19688,7 +19688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 59c4e03b8324e8043b05e0931d54252a, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1265128272
 SpriteRenderer:
@@ -19877,7 +19877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 256be9519b3256943a8b0c32b1d61f92, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1300231126
 SpriteRenderer:
@@ -20052,7 +20052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 374a86b7c27fb85408624351f2a5baff, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1303044271
 SpriteRenderer:
@@ -20272,7 +20272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5e22bbd9cb283a24ea617bd266a7810e, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!1 &1333097754
 GameObject:
@@ -20455,7 +20455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 3542e43f38f496c4b898b5362930bd40, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &1348898165
 SpriteRenderer:
@@ -20644,7 +20644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8c72ec9a21a00a74cbbd0f16ed7152e5, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1384026583
 SpriteRenderer:
@@ -20813,7 +20813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 93504f4b60466f4479b84549f66e7433, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1390455230
 SpriteRenderer:
@@ -21002,7 +21002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 478d744429a118c4a9cf1a8fa41ef767, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1392361085
 SpriteRenderer:
@@ -21456,7 +21456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 74d05fe0e39bebb4796961c3125303cd, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1411006159
 SpriteRenderer:
@@ -21647,7 +21647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: f2f780cce4ad3954d89ff1872758e2a5, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1420761417
 SpriteRenderer:
@@ -21900,7 +21900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 417d7a0f27f37e64c87dc14b816692e7, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &1427845171
 SpriteRenderer:
@@ -22053,7 +22053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8bdb3c94d88799f41b0d4ebb827b2edc, type: 3}
-  regionName: hello
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &1434810132
 PolygonCollider2D:
@@ -22174,7 +22174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 19d8edbfe6175a445b12ba1d0e04d528, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &1446493057
 PolygonCollider2D:
@@ -22510,7 +22510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8ae76a5b71a16554797731f49cc5074c, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!1 &1471261792
 GameObject:
@@ -22788,7 +22788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5214e307bd0117e409f9d2913dab4730, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1480184251
 SpriteRenderer:
@@ -22979,7 +22979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d711f22df6fbd6c4196d9f53dc9ed4b6, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1488043090
 SpriteRenderer:
@@ -23164,7 +23164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d2a7df1f967f8494f9ff76e6a67316a9, type: 3}
-  regionName: 
+  regionName: "\u0421\u0430\u043A\u0441\u043E\u043D\u0438\u044F"
   regionType: enemy
 --- !u!212 &1490342662
 SpriteRenderer:
@@ -23388,7 +23388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 283e719461ee24b4fba30375c8413144, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1505245314
 SpriteRenderer:
@@ -23562,7 +23562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 6919c263606d5874ab9e80323d11b37b, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1513283871
 SpriteRenderer:
@@ -23749,7 +23749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 0adef48f435650b44a1f8ba132755f69, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1527285076
 SpriteRenderer:
@@ -24001,7 +24001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 02f5a5930f0bd134f9b856255b69bcc0, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1545106200
 SpriteRenderer:
@@ -24181,7 +24181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 4066d727860555843b15fe0835d9f66b, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1549310976
 SpriteRenderer:
@@ -24364,7 +24364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8df2d646eeaa5f847ad25b033c5db0c2, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1559996922
 SpriteRenderer:
@@ -24627,7 +24627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 7e97cf35631bed04c94d8956d0bc4679, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!1 &1576987231
 GameObject:
@@ -24822,7 +24822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: d16e71e42ebd7f949ad6b1c681635c79, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1591387682
 GameObject:
@@ -25020,7 +25020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 90f067bc18435ed4c93bf507c843a130, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1604116928
 GameObject:
@@ -25134,7 +25134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5620f221c9203f542b15fcdc9cb63408, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1604116932
 SpriteRenderer:
@@ -25381,7 +25381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 1b82ce87464b4774888d02fab69c986b, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1618259045
 SpriteRenderer:
@@ -25632,7 +25632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 95616bf2521c70d41afab795a758a0b3, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1627302717
 SpriteRenderer:
@@ -25718,7 +25718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a7dbd994bcac413468c332e5599302f8, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1630445258
 SpriteRenderer:
@@ -25990,7 +25990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 97214293ba9b82149a98d9a45605487a, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1630694642
 SpriteRenderer:
@@ -26309,7 +26309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 0ca6a1bec23fdba4e81bc023f58dc16e, type: 3}
-  regionName: Variors
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &1637110488
 SpriteRenderer:
@@ -26534,7 +26534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5d7e78a2bc83a6447b8fba245dcf5c44, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!1 &1655314750
 GameObject:
@@ -26937,7 +26937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 215c1600cb08e554bbf142f516376fbf, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1667863613
 SpriteRenderer:
@@ -27114,7 +27114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 585ed2fa9d9687a4cafd129d53d233e7, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1675603856
 SpriteRenderer:
@@ -27285,7 +27285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 3f104fb599c65ee4d9ac18403cde3b07, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1676024570
 SpriteRenderer:
@@ -27465,7 +27465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 20cf7ef07029b8145934627dd5bb4cbd, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1682052903
 SpriteRenderer:
@@ -27770,7 +27770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ff5ad5255ff98a941ba6fcd38aa7048f, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1700169349
 SpriteRenderer:
@@ -27956,7 +27956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 01a09615f2d45444da26d182f3085550, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1703260728
 SpriteRenderer:
@@ -28143,7 +28143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 092e131af4d85004e9424497ebb626ae, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1715695689
 SpriteRenderer:
@@ -28309,7 +28309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 617aef793f7478844b9617f6c450f2c3, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1727334552
 SpriteRenderer:
@@ -28495,7 +28495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: bdb79173aa824e6498f71bfb50bca3cc, type: 3}
-  regionName: Sasha
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1739603281
 SpriteRenderer:
@@ -28668,7 +28668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2bf8b93f8d199534c8f789c47cce314c, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1740638735
 SpriteRenderer:
@@ -28838,7 +28838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8568daac56db05f4e88d6745a37cad0a, type: 3}
-  regionName: "\u0417\u0430\u043B\u0443\u043F\u043A\u0438\u043D\u0441"
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1741740960
 SpriteRenderer:
@@ -29011,7 +29011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: a680e767d69dc1c49a2c52f84b1dde9a, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1742655620
 SpriteRenderer:
@@ -29306,7 +29306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 9f7c0089fe9f2114dbeabaa17129bfdc, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1745996609
 SpriteRenderer:
@@ -29482,7 +29482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 8603c91d651a10146bf3a8d8f2284171, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &1758044603
 SpriteRenderer:
@@ -29651,7 +29651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: dd378d4e5d354404a9cd4a00053cd56f, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1782435421
 SpriteRenderer:
@@ -29971,7 +29971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 41035a3314aae514f9811824f0ff9f30, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &1786393345
 SpriteRenderer:
@@ -30300,7 +30300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 5457f681d19e9cd4b8c4a4fd96c2ba18, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1810365596
 SpriteRenderer:
@@ -30446,7 +30446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: fd62b416cbdb587409f627fc2def708a, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1832388408
 SpriteRenderer:
@@ -30690,7 +30690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 29e10a025cc0e5842acc7055ddab6705, type: 3}
-  regionName: 
+  regionName: "\u0411\u0440\u0430\u0434\u0435\u043D\u0431\u0443\u0440\u0433"
   regionType: enemy
 --- !u!212 &1843923836
 SpriteRenderer:
@@ -30856,7 +30856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 6511ce690bf491440bcb95e8d15b23ec, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1847701075
 SpriteRenderer:
@@ -31166,7 +31166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: f9dc9718fb45eee4dab7f0a058c5f575, type: 3}
-  regionName: 
+  regionName: "\u0411\u0430\u0432\u0430\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1858018933
 SpriteRenderer:
@@ -31617,7 +31617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2dc47bb504913d247acad46917846613, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1872144281
 SpriteRenderer:
@@ -31948,7 +31948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 10ad17750f0aefc4bbb36fd0774473f5, type: 3}
-  regionName: 
+  regionName: "\u0421\u043B\u043E\u0432\u0430\u043A\u0438\u044F"
   regionType: enemy
 --- !u!212 &1886626575
 SpriteRenderer:
@@ -32101,7 +32101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 0299fd96844fb2844af2d84172a45641, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!60 &1889566012
 PolygonCollider2D:
@@ -32306,7 +32306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2a453c72d3416544586ec4e2e2312fcd, type: 3}
-  regionName: 
+  regionName: "\u0421\u0438\u043B\u0435\u0437\u0438\u044F"
   regionType: enemy
 --- !u!212 &1891924355
 SpriteRenderer:
@@ -32526,7 +32526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ce4c778f143d85e49946d2374176f27c, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1900344853
 GameObject:
@@ -32653,7 +32653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 7888b483617324c45af3b218452e8d7a, type: 3}
-  regionName: 
+  regionName: "\u0421\u0430\u043A\u0441\u043E\u043D\u0438\u044F"
   regionType: enemy
 --- !u!212 &1900344857
 SpriteRenderer:
@@ -32873,7 +32873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ad1d4d9696396654db1c0a898df3106e, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!1 &1921465089
 GameObject:
@@ -33157,7 +33157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 58ad3626f9e657a438f6fcd76afe15a0, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1953062826
 SpriteRenderer:
@@ -33243,7 +33243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2451707981209c04a8cfecd4e8cc47cf, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &1957717747
 SpriteRenderer:
@@ -33489,7 +33489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: faf02853d873bac448074d94f1faa9f3, type: 3}
-  regionName: 
+  regionName: "\u041C\u043E\u0440\u0430\u0432\u0438\u044F"
   regionType: 
 --- !u!212 &1982323191
 SpriteRenderer:
@@ -33673,7 +33673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 2fdf753f8f35a8b4b8b5f01b19a164a5, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1985059538
 SpriteRenderer:
@@ -33848,7 +33848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 690fa30dbdf9fbd4e8577d343bddce08, type: 3}
-  regionName: 
+  regionName: "\u0410\u0432\u0441\u0442\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &1987010650
 SpriteRenderer:
@@ -34151,7 +34151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: f0705bc2b96ce0b4d91acacd02487df7, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &2027075179
 SpriteRenderer:
@@ -34323,7 +34323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 40785be88df59cb42a41fe6abbade647, type: 3}
-  regionName: 
+  regionName: "\u0412\u0435\u043D\u0433\u0440\u0438\u044F"
   regionType: enemy
 --- !u!212 &2034980403
 SpriteRenderer:
@@ -34587,7 +34587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 083ba0cd56a208044a9eff98fc3a2b54, type: 3}
-  regionName: 
+  regionName: "\u0421\u0430\u043A\u0441\u043E\u043D\u0438\u044F"
   regionType: enemy
 --- !u!212 &2063183854
 SpriteRenderer:
@@ -34755,7 +34755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: ed6aadb5e0309534faf1610753ee2b18, type: 3}
-  regionName: 
+  regionName: "\u041F\u043E\u043B\u044C\u0448\u0430"
   regionType: enemy
 --- !u!212 &2075865720
 SpriteRenderer:
@@ -34915,7 +34915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 03e563abc7322e746951757b7d2f090e, type: 3}
-  regionName: 
+  regionName: "\u0411\u043E\u0433\u0435\u043C\u0438\u044F"
   regionType: 
 --- !u!212 &2097272996
 SpriteRenderer:
@@ -35259,7 +35259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightTexture: {fileID: 21300000, guid: 84f74b8d9afb52d4092f7f62b34b3cf5, type: 3}
-  regionName: 
+  regionName: "\u0421\u0430\u043A\u0441\u043E\u043D\u0438\u044F"
   regionType: enemy
 --- !u!212 &2147057129
 SpriteRenderer:
