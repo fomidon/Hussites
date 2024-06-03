@@ -1,17 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Serialization;
+using Image = UnityEngine.UI.Image;
 
 public class Tutorial : MonoBehaviour
 {
     private List<TutorialStep> steps;
     private bool isEnded;
     public bool isTutorialNeed = true;
+    [SerializeField] private Image tutorialWindow;
+    [SerializeField] private TMP_Text instructionText;
 
     [SerializeField] private List<MapRegion> regionsToVisit;
     [SerializeField] private FightWindow fightWindow;
     [SerializeField] private List<GameObject> slides;
     private Queue<MapRegion> visitQueue = new();
-    
+
 
     private int previousInfantryCount;
     private int previousRecruitsCount;
@@ -26,73 +31,91 @@ public class Tutorial : MonoBehaviour
         ShowCurrentStep();
     }
 
+    public void Restart()
+    {
+        slides[currentStepIndex].SetActive(false);
+        tutorialWindow.gameObject.SetActive(false);
+        
+        previousRecruitsCount = 0;
+        previousTurnsCount = 1;
+        previousInfantryCount = 0;
+        currentStepIndex = 0;
+        isEnded = false;
+        visitQueue = new();
+        SetupTutorial();
+        ShowCurrentStep();
+    }
+    
     private void SetupTutorial()
     {
         foreach (var el in regionsToVisit)
-            visitQueue.Enqueue(el); 
+            visitQueue.Enqueue(el);
         //previousRecruitsCount = gameManager.player.army.RecruitsCount;
         //previousInfantryCount = gameManager.player.army.InfantryOutside.Count;
-
+        
         steps = new List<TutorialStep>
         {
             // Первый шаг: Переместиться на первый указанный регион
             new()
             {
-                Instruction = "Добро пожаловать, командир! Несомненно, вам уготована великая судьба, однако сперва давайте познакомимся с основными механиками игры. Для начала переместитесь в соседнюю провинцию, кликнув на нее.",
-                StepAction = () => Debug.Log(""),
+                Instruction =
+                    "Добро пожаловать, командир! Несомненно, вам уготована великая судьба, однако сперва давайте познакомимся с основными механиками игры. Для начала переместитесь в соседнюю провинцию, кликнув на нее.",
+                StepAction = () => {},
                 CompletionCondition = PlayerMovedToNextRegion
             },
             // Второй шаг: Нанять новобранцев
             new()
             {
-                Instruction = "Наймите своих первых новобранцев",
-                StepAction = () =>
-                {
-                    Debug.Log("стрелка на новобранцев");
-                },
+                Instruction =
+                    "С каждой локацией в игре можно взаимодействовать. Для создания армии нужны новобранцы, нанимаемые на дружественных фермах. Наймите своих первых бойцов.",
+                StepAction = () => {},
                 CompletionCondition = PlayerHiredRecruits
             },
             // Третий шаг: Сдать ход
             new()
             {
-                Instruction = "Чтобы пойти дальше, вам нужно завершить ход. Сделайте это",
-                StepAction = () => Debug.Log("\"зажечь\" или переместить стрелочку на кнопку сдать ход"),
+                Instruction = "Чтобы пойти дальше, вам нужно завершить ход. \nСделайте это.",
+                StepAction = () => {},
                 CompletionCondition = PlayerEndedTurn
             },
             // Четвертый шаг: Переместиться на второй указанный регион
             new()
             {
                 Instruction = "Двигайтесь в Прагу.",
-                StepAction = () => Debug.Log("фокус и стрелка на регион"),
+                StepAction = () => {},
                 CompletionCondition = PlayerMovedToNextRegion
             },
             // Пятый шаг: Улучшить новобранцев до пехоты
             new()
             {
-                Instruction = "Улучшите новобранцев до пехоты.",
-                StepAction = () => Debug.Log("стрелка на кнопку улучшить"),
+                Instruction = "В городе вы можете обучать своих новобранцев, делая из них полноценные боевые отряды. В этот раз мы можем позволить себе только легкую пехоту.",
+                StepAction = () => {},
                 CompletionCondition = PlayerUpgradedRecruits
             },
             // Шестой шаг: Сдать ход
             new()
             {
-                Instruction = "Сдайте ход.",
-                StepAction = () => Debug.Log("\"зажечь\" стрелочку на кнопку сдать ход"),
+                Instruction = "Завершите ход.",
+                StepAction = () => {},
                 CompletionCondition = PlayerEndedTurn
             },
             // Седьмой шаг: выйти из города
             new()
             {
-                Instruction = "Переместитесь на соседнюю провинцию",
-                StepAction = () => Debug.Log(""),
+                Instruction = "Здесь нам больше делать нечего, отправляемся.",
+                StepAction = () => {},
                 CompletionCondition = PlayerMovedToNextRegion
             },
-            
+
             // Восьмой шаг: Внезапное нападение
             new()
             {
-                Instruction = "На вас нападают! После боя обучение будет завершено.",
-                StepAction = () => fightWindow.ShowFightWindow(),
+                Instruction = "На Богемию вновь пошли войной! Пока основные силы Табора сражаются с крестоносцами в Моравии, отразите атаку североавстрийских баронов. Увы, я должен покинуть вас до начала боя!",
+                StepAction = () =>
+                {
+                    tutorialWindow.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 186);
+                    fightWindow.ShowFightWindow();
+                },
                 CompletionCondition = () => !fightWindow.isWindowActivate
             }
         };
@@ -113,9 +136,7 @@ public class Tutorial : MonoBehaviour
         {
             isEnded = true;
             slides[^1].SetActive(false);
-            Destroy(this);
-            // TODO: потушить окошко с инструкциями
-            
+            tutorialWindow.gameObject.SetActive(false);
         }
     }
 
@@ -129,11 +150,11 @@ public class Tutorial : MonoBehaviour
 
     private void ActivateNextSlide()
     {
-        if (currentStepIndex > 0) 
+        if (currentStepIndex > 0)
             slides[currentStepIndex - 1].SetActive(false);
         slides[currentStepIndex].SetActive(true);
     }
-    
+
     private void NextStep()
     {
         currentStepIndex++;
@@ -142,8 +163,9 @@ public class Tutorial : MonoBehaviour
 
     private void DisplayInstruction(string instruction)
     {
-        // TODO: логика отображения инструкции на экране
-        Debug.Log(instruction);
+        if (!tutorialWindow.gameObject.activeSelf)
+            tutorialWindow.gameObject.SetActive(true);
+        instructionText.text = instruction;
     }
 
     private bool PlayerMovedToNextRegion()

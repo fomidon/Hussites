@@ -1067,7 +1067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72828077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1086,7 +1086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 249}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 551, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72828078
@@ -6392,6 +6392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 545147042}
+  _tutorial: {fileID: 1386892133}
   canvas: {fileID: 749291350}
   _story: {fileID: 1551867522}
 --- !u!4 &416953020
@@ -16909,8 +16910,8 @@ MonoBehaviour:
     \u0432 \u0441\u043E\u0441\u0435\u0434\u043D\u044E\u044E \u043F\u0440\u043E\u0432\u0438\u043D\u0446\u0438\u044E,
     \u043A\u043B\u0438\u043A\u043D\u0443\u0432 \u043D\u0430 \u043D\u0435\u0435."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d7b8ec021bb4e74698e7ba69a26087a, type: 2}
-  m_sharedMaterial: {fileID: 220117963957713593, guid: 5d7b8ec021bb4e74698e7ba69a26087a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
+  m_sharedMaterial: {fileID: 8750805254981269336, guid: b667f9ab4c56e794cad884d3c9ef3b12, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22988,6 +22989,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTutorialNeed: 1
+  tutorialWindow: {fileID: 72828078}
+  instructionText: {fileID: 1008660662}
   regionsToVisit:
   - {fileID: 1741740959}
   - {fileID: 566852164}
