@@ -9,15 +9,15 @@ public class PlayerArmy
     // Списки для хранения количества войск
     public const int MaxArmySize = 20;
 
-    public int _recruitsCount { get; private set; } = 0;
-    private List<MeleeSoldier> _infantryUnits = new List<MeleeSoldier>();
-    public List<MeleeSoldier> infantryOutside { get => _infantryUnits.ToList(); }
+    public int RecruitsCount { get; private set; } = 0;
+    private List<MeleeSoldier> _infantryUnits = new();
+    public List<MeleeSoldier> InfantryOutside { get => _infantryUnits.ToList(); }
 
-    private List<MeleeSoldier> _cavalryUnits = new List<MeleeSoldier>();
-    public List<MeleeSoldier> cavalryOutside { get => _cavalryUnits.ToList(); }
+    private List<MeleeSoldier> _cavalryUnits = new();
+    public List<MeleeSoldier> CavalryOutside { get => _cavalryUnits.ToList(); }
 
-    private List<DistantSoldier> _rangedUnits = new List<DistantSoldier>();
-    public List<DistantSoldier> rangedUnitsOutside { get => _rangedUnits.ToList(); }
+    private List<DistantSoldier> _rangedUnits = new();
+    public List<DistantSoldier> RangedUnitsOutside { get => _rangedUnits.ToList(); }
 
     public double DamageModifier { get; private set; } = 1;
 
@@ -25,7 +25,7 @@ public class PlayerArmy
 
     public int armySize
     {
-        get => _recruitsCount + _infantryUnits.Count +
+        get => RecruitsCount + _infantryUnits.Count +
             _cavalryUnits.Count + _rangedUnits.Count;
     }
 
@@ -42,11 +42,11 @@ public class PlayerArmy
             Debug.LogWarning("Вы не можете нанимать новобранцев сверх лимита");
             return;
         }
-        _recruitsCount += amount;
+        RecruitsCount += amount;
     }
     public bool CanTrainRecruits()
     {
-        return _recruitsCount > 0;
+        return RecruitsCount > 0;
     }
 
     public void TrainRecruit(string unitType)
@@ -56,7 +56,7 @@ public class PlayerArmy
             Debug.LogWarning("Нет новобранцев для обучения");
             return;
         }
-        _recruitsCount--;
+        RecruitsCount--;
 
         switch (unitType)
         {
@@ -75,13 +75,13 @@ public class PlayerArmy
     // Конструкторы
     public PlayerArmy()
     {
-        _recruitsCount = 0;
+        RecruitsCount = 0;
     }
 
     public PlayerArmy(int recruitsCount, List<MeleeSoldier> infantryUnits, 
         List<MeleeSoldier> cavalryUnits, List<DistantSoldier> rangedUnits)
     {
-        _recruitsCount = recruitsCount;
+        RecruitsCount = recruitsCount;
         _infantryUnits = infantryUnits;
         _cavalryUnits = cavalryUnits;
         _rangedUnits = rangedUnits;
@@ -89,7 +89,7 @@ public class PlayerArmy
 
     public PlayerArmy(ProgressData save)
     {
-        _recruitsCount = save.RecruitsData;
+        RecruitsCount = save.RecruitsData;
         _infantryUnits = save.InfantryUnitsData.Select(x => UnitsInit.InitInfantrySoldiers(x)).ToList();
         _cavalryUnits = save.CavalryUnitsData.Select(x => UnitsInit.InitCavalrySoldiers(x)).ToList();
         _rangedUnits = save.DistantUnitsData.Select(x => UnitsInit.InitCrossbowSoldiers(x)).ToList();
@@ -110,7 +110,7 @@ public class PlayerArmy
     {
         var unitTextMesh = GameObject.Find($"Text (Новобранцы)").GetComponent<TextMeshProUGUI>();
         if (unitTextMesh != null)
-            unitTextMesh.text = (_recruitsCount * 250).ToString();
+            unitTextMesh.text = (RecruitsCount * 250).ToString();
     }
 
     private void UpdateUnitText<T>(List<T> Units, string unitType) where T : ISoldier

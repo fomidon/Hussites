@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Farm _farm;
     [SerializeField] private City _city;
+    [SerializeField] private Tabor _tabor;
     [SerializeField] private EnemyProvince _enemyProvince;
     [SerializeField] private FightWindow _fightWindow;
     public GameObject playerPrefab; // Префаб игрока
-    private Player _player; // Модель игрока
+    [FormerlySerializedAs("_player")] public Player player; // Модель игрока
     private PlayerMovement _playerMovement; // Контроллер перемещения игрока
     public MapRegion currentRegion; // Текущий регион, в котором находится игрок
     public bool standartInterfaceBlock = false;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("a");
         saveManager = new ProgressSaveManager();
         if (saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
         {
@@ -27,16 +29,13 @@ public class GameManager : MonoBehaviour
         {
             InitializeGame();
         }
-        _farm._player = _player;
-        _city._player = _player;
-        _enemyProvince._player = _player;
     }
 
     private void InitializeGame()
     {
         // Создание игрока из префаба
         playerObject = Instantiate(playerPrefab);
-        _player = playerObject.GetComponent<Player>();
+        player = playerObject.GetComponent<Player>();
 
         // Создание экземпляра контроллера перемещения
         _playerMovement = playerObject.GetComponent<PlayerMovement>();
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
-        _player.position = currentRegion;
+        player.position = currentRegion;
 
         // UpdateUI();
     }
@@ -61,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         if (TurnManager.Instance.CanMove())
         {
-            currentRegion = _playerMovement.MoveToRegion(_player, targetRegion);
+            currentRegion = _playerMovement.MoveToRegion(player, targetRegion);
             ShowRegion(currentRegion);
         }
         //UpdateUI();
@@ -71,28 +70,32 @@ public class GameManager : MonoBehaviour
     {
         switch (currentRegion.regionType)
         {
-            case "farm":
+            case "tabor":
                 _city.HideCity();
+                _farm.HideFarm();
                 _enemyProvince.HideEnemyProvince();
-                _farm.ShowFarm();
+                _tabor.ShowTabor();
                 break;
             case "city":
                 _farm.HideFarm();
+                _tabor.HideTabor();
                 _enemyProvince.HideEnemyProvince();
-                _city.ShowCity();
+                _city.ShowCity(currentRegion);
                 break;
             case "enemy":
                 _farm.HideFarm();
+                _tabor.HideTabor();
                 _city.HideCity();
                 _enemyProvince.HideEnemyProvince();
                 _fightWindow.ShowFightWindow();
                 break;
             default:
-                _farm.HideFarm();
                 _city.HideCity();
+                _tabor.HideTabor();
                 _enemyProvince.HideEnemyProvince();
-                Debug.LogWarning("Неизвестный тип региона");
+                _farm.ShowFarm(currentRegion);
                 break;
+                
         }
     }
 
@@ -116,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.F5))
         {
-            saveManager.SaveProgress(SaveType.ManualSave, _player);
+            saveManager.SaveProgress(SaveType.ManualSave, player);
         }
 
         if (Input.GetKeyUp(KeyCode.F9))
@@ -130,15 +133,16 @@ public class GameManager : MonoBehaviour
 
     public void EndTurnCompute(int turn)
     {
-        if (_player.ArmyMaintenance())
+        if (player.ArmyMaintenance())
         {
-            currentRegion = _playerMovement.EmergencyTeleport(_player); 
+            currentRegion = _playerMovement.EmergencyTeleport(player); 
         }
     }
 
     public void BeginTurnCompute(int turn) 
     {
-        saveManager.BeginTurn(_player);
+        player.army.GetArmyForBattle();
+        saveManager.BeginTurn(player);
         try { TurnEvents(turn); } catch { Debug.Log("Событий нет"); }
     }
 
@@ -150,14 +154,14 @@ public class GameManager : MonoBehaviour
     public void LoadFromSave(ProgressData progressData)
     {
         // Создание игрока из префаба
-        if (_player != null)
+        if (player != null)
         {
             Destroy(playerObject);
         }
 
         playerObject = Instantiate(playerPrefab);
-        _player = playerObject.GetComponent<Player>();
-        _player.InitializeFromSave(progressData);
+        player = playerObject.GetComponent<Player>();
+        player.InitializeFromSave(progressData);
 
         // Создание экземпляра контроллера перемещения
         _playerMovement = playerObject.GetComponent<PlayerMovement>();
@@ -167,9 +171,23 @@ public class GameManager : MonoBehaviour
 
         // Установка начального региона для игрока
         currentRegion = _playerMovement.initialRegion;
-        _player.position = currentRegion;
+        player.position = currentRegion;
 
         //Номер и начало хода
         TurnManager.Instance.LoadFromSave(progressData);
+
+        SetPlayerInLocations();
+    }
+
+    public void SetPlayerInLocations()
+    {
+        if (player != null)
+        {
+            _farm._player = player;
+            _city._player = player;
+            _enemyProvince._player = player;
+            _fightWindow._player = player;
+            _fightWindow.movement = _playerMovement;
+        }
     }
 }

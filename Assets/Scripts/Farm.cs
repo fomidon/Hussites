@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Farm : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] public Player _player;
-    private MapRegion _currentMapRegion;
+    [SerializeField] public TMP_Text _regionName;
 
-    public void ShowFarm()
+    public void ShowFarm(MapRegion _currentMapRegion)
     {
         _image.gameObject.SetActive(true);
+        _regionName.text = _currentMapRegion.regionName;
+
     }
     
     public void ClickHire()

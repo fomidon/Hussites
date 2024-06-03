@@ -1,10 +1,5 @@
 ﻿using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using System;
-using System.Linq;
-using UnityEngine.Windows;
 
 public class Player : MonoBehaviour
 {
@@ -12,18 +7,13 @@ public class Player : MonoBehaviour
     public MapRegion position;
     public MapRegion startPosition;
 
-    // Массивы с классами юнитов разных родов войск
-    private readonly string[] _infarnyUnitTypes = { "Новобранцы", "Пехота" };
-    private readonly string[] _cavarlyUnitTypes = { "Кавалерия" };
-    private readonly string[] _rangedUnitTypes = { "Дальний бой" };
-
     // Свойства для хранения валюты
     public int Piety { get; private set; }
     public int Gold { get; private set; }
 
     // Списки для хранения количества войск
 
-    public PlayerArmy army = new PlayerArmy();
+    public PlayerArmy army = new();
 
     // Ссылки на текст для отображения в интерфейсе
     public TextMeshProUGUI pietyText;
@@ -45,11 +35,6 @@ public class Player : MonoBehaviour
         Piety = data.Piety;
         position = GameObject.Find(data.Position).GetComponent<MapRegion>();
         army = new PlayerArmy(data);
-    }
-
-    private void InitializeUnitDictionary(Dictionary<string, int> unitDict, string[] unitTypes)
-    {
-        foreach (var unitType in unitTypes) unitDict.Add(unitType, 0);
     }
 
     // Метод для изменения благочестия
@@ -93,10 +78,9 @@ public class Player : MonoBehaviour
         {
             Gold -= army.ArmyMaintenance;
             return false;
-        } else
-        {
-            Gold = 0;
-            return true;
         }
+
+        Gold = 0;
+        return true;
     }
 }

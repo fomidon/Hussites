@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Click : MonoBehaviour
@@ -15,15 +16,16 @@ public class Click : MonoBehaviour
     {
         if (_canClick)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                GetRegionInfo();
-                _currentMapRegion.SelectRegion();
-            }
-            else if (Input.GetMouseButtonDown(1))
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     GetRegionInfo();
+            //     _currentMapRegion.SelectRegion();
+            // }
+            if (Input.GetMouseButtonDown(1))
             {
                 GetRegionInfo();
                 _image.gameObject.SetActive(true);
+                _currentMapRegion.SelectRegion();
                 _canClick = false;
                 
             }
@@ -67,6 +69,7 @@ public class Click : MonoBehaviour
     public void ClickNo()
     {
         _image.gameObject.SetActive(false);
+        _currentMapRegion.DeselectRegion();
         _canClick = true;
     }
 }

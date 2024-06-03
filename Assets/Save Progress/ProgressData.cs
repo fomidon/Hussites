@@ -25,10 +25,10 @@ public class ProgressData
 
     public ProgressData(Player player)
     {
-        RecruitsData = player.army._recruitsCount;
-        InfantryUnitsData = player.army.infantryOutside.Select(x => x.GlobalHealth).ToList();
-        CavalryUnitsData = player.army.cavalryOutside.Select(x => x.GlobalHealth).ToList();
-        DistantUnitsData = player.army.rangedUnitsOutside.Select(x => x.GlobalHealth).ToList();
+        RecruitsData = player.army.RecruitsCount;
+        InfantryUnitsData = player.army.InfantryOutside.Select(x => x.GlobalHealth).ToList();
+        CavalryUnitsData = player.army.CavalryOutside.Select(x => x.GlobalHealth).ToList();
+        DistantUnitsData = player.army.RangedUnitsOutside.Select(x => x.GlobalHealth).ToList();
         Gold = player.Gold;
         Piety = player.Piety;
         Position = player.position.name;
