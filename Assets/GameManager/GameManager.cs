@@ -141,7 +141,41 @@ public class GameManager : MonoBehaviour
 
     public void TurnEvents(int turn)
     {
-       throw new NotImplementedException();
+        MapRegion battlePlace;
+       switch (turn)
+        {
+            case 9:
+                battlePlace = GameObject.Find("region22").GetComponent<MapRegion>();
+                _playerMovement.Teleport(player, battlePlace);
+                _fightWindow.ShowFightWindow("secondCrusade");
+                break;
+            case 15:
+                battlePlace = GameObject.Find("3er4").GetComponent<MapRegion>();
+                _playerMovement.Teleport(player, battlePlace);
+                _fightWindow.ShowFightWindow("silesia");
+                break;
+            case 22:
+                battlePlace = GameObject.Find("er8").GetComponent<MapRegion>();
+                _playerMovement.Teleport(player, battlePlace);
+                _fightWindow.ShowFightWindow("saxonia");
+                break;
+            case 25:
+                battlePlace = GameObject.Find("region9").GetComponent<MapRegion>();
+                _playerMovement.Teleport(player, battlePlace);
+                _fightWindow.ShowFightWindow("thirdCrusade");
+                break;
+            case 40:
+                battlePlace = GameObject.Find("2er31").GetComponent<MapRegion>();
+                _playerMovement.Teleport(player, battlePlace);
+                if (player.Piety > 50)
+                {
+                    _fightWindow.ShowFightWindow("moderate");
+                } else
+                {
+                    _fightWindow.ShowFightWindow("tabor");
+                }
+                break;
+        }
     }
 
     public void LoadFromSave(ProgressData progressData)
