@@ -5,6 +5,7 @@ public class Tutorial : MonoBehaviour
 {
     private List<TutorialStep> steps;
     private bool isEnded;
+    public bool isTutorialNeed = true;
 
     [SerializeField] private List<MapRegion> regionsToVisit;
     [SerializeField] private FightWindow fightWindow;
@@ -99,7 +100,7 @@ public class Tutorial : MonoBehaviour
 
     private void ShowCurrentStep()
     {
-        if (currentStepIndex < steps.Count)
+        if (isTutorialNeed && currentStepIndex < steps.Count)
         {
             // Показать инструкцию текущего шага
             DisplayInstruction(steps[currentStepIndex].Instruction);
