@@ -5,42 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="822f8efa-e564-40a5-a42a-ea6648bb0647" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant.zip.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/COPYRIGHT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/COPYRIGHT.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Bold.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-BoldItalic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Italic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Light.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-LightItalic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Medium.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-MediumItalic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Regular SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Regular SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-Regular.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-SemiBold.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/Cormorant-SemiBoldItalic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/LICENSE.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Cormorant/README.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hussites/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameManager/TutorialManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager/TutorialManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Save Progress/ProgressData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Save Progress/ProgressData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyProvince.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyProvince.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/23/af09c285/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,30 +37,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.CSharpInteractiveConfiguration",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.CSharpInteractiveConfiguration&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\gangs\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\gangs\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\gangs\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\gangs\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\gangs\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\gangs\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Билд/MonoBleedingEdge/Новая папка/Hussites.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../HussitsGame\Hussites.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\My\C#\Билд\MonoBleedingEdge" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -93,7 +68,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -101,7 +76,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -139,6 +114,7 @@
       <updated>1716488485687</updated>
       <workItem from="1716488488971" duration="6562000" />
       <workItem from="1717425450383" duration="6619000" />
+      <workItem from="1717458096331" duration="1128000" />
     </task>
     <servers />
   </component>

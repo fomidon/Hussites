@@ -18,8 +18,8 @@ public class Tutorial : MonoBehaviour
     private Queue<MapRegion> visitQueue = new();
 
 
-    private int previousInfantryCount;
-    private int previousRecruitsCount;
+    private int previousInfantryCount = 250;
+    private int previousRecruitsCount = 0;
     private int previousTurnsCount = 1;
 
     [SerializeField] private GameManager gameManager;
@@ -41,7 +41,7 @@ public class Tutorial : MonoBehaviour
         
         previousRecruitsCount = 0;
         previousTurnsCount = 1;
-        previousInfantryCount = 0;
+        previousInfantryCount = 250;
         currentStepIndex = 0;
         isEnded = false;
         visitQueue = new();
@@ -197,9 +197,9 @@ public class Tutorial : MonoBehaviour
 
     private bool PlayerUpgradedRecruits()
     {
-        if (previousInfantryCount == gameManager.player.army.InfantryOutside.Count)
+        if (previousInfantryCount == gameManager.player.army.GetSoldiersNumbers()[0].Item1)
             return false;
-        previousInfantryCount = gameManager.player.army.InfantryOutside.Count;
+        previousInfantryCount = gameManager.player.army.GetSoldiersNumbers()[0].Item1;
         return true;
     }
 }

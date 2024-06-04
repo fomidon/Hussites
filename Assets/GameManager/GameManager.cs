@@ -24,7 +24,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("a");
         saveManager = new ProgressSaveManager();
-        if (saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
+        if (saveManager.TryReadFromSave(SaveType.ManualSave, out var saveData))
+        {
+            LoadFromSave(saveData);
+        }
+        else if (saveManager.TryReadFromSave(SaveType.BasicSave, out var baseData))
         {
             LoadFromSave(baseData);
         }

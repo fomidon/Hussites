@@ -22,7 +22,6 @@ public class MainMenu : MonoBehaviour
     public void Continue()
     {
         canvas.SetActive(false);
-       
     }
 
     // Update is called once per frame

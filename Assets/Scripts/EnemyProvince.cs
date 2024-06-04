@@ -12,12 +12,12 @@ public class EnemyProvince : MonoBehaviour
     public void ShowEnemyProvince()
     {
         _image.gameObject.SetActive(true);
-      
     }
     
     public void ClickRob()
     {
         _player.ModifyGold(30000);
+        HideEnemyProvince();
     }
     
     public void HideEnemyProvince()
